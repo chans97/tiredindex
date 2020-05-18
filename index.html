@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>javascript</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/f57bb9b3cd.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="time_div">
+        <h2>
+            Keep Going
+        </h2>
+        <h1>
+        </h1>
+
+    </div>
+
+
+    <div class="name_div">
+        <h4 class="greeting">
+            안녕하세요. 우측하단에 이름을 입력해주세요.
+        </h4>
+        <form class="form_js hide naming">
+            <input class="input_js" placeholder="이름을 입력해주세요.">
+            <button id="btn">확인</button>
+        </form>
+
+
+        <form class="clean_form hide">
+            <button id="clean" class="rename">이름 다시 입력하기</button>
+        </form>
+    </div>
+
+    <div class="todo_div">
+        <form class="js-toDoForm form__group field">
+            <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+            <label for="name" class="form__label">해야 할 일!</label>
+        </form>
+        <ul class="js-toDoList">
+        </ul>
+    </div>
+    <div class="geo_div">
+        <span id="loc-js" class="wheather"></span>
+        <span id="temp-js" class="wheather"></span>
+        <span id="wheather-js" class="wheather"></span>
+
+    </div>
+
+</body>
+<script src="time.js"></script>
+<script src="greeting.js"></script>
+<script src="todo.js"></script>
+<script src="geoinformation.js"></script>
+
+</html>

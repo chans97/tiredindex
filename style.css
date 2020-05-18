@@ -1,0 +1,206 @@
+body {
+    background-color: #2c3e50;
+    background-image: url(images/4.jpg);
+}
+
+h1 {
+    font-size: 5vw;
+    color: floralwhite;
+    text-shadow: 5px 3px 1px gray;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+h2 {
+    font-size: 5vw;
+    color: #4a69bd;
+    text-shadow: 5px 3px 1px #0c2461;
+    margin-bottom: 0em;
+    margin-top: 0em;
+}
+
+h4 {
+    font-size: 2vw;
+    color: floralwhite;
+    text-shadow: 2px 2px 2px gray;
+    margin-bottom: 0em;
+    margin-top: 0vmax;
+    margin-bottom: 0vh;
+}
+
+span {
+    font-size: 1.2vw;
+    color: floralwhite;
+    text-shadow: 2px 2px 2px gray;
+    margin-bottom: 0em;
+}
+
+.geo_div {
+    top: 2%;
+    left: 1%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.wheather {
+    font-size: 0.8vw;
+    color: floralwhite;
+    text-shadow: 2px 2px 2px gray;
+    margin-bottom: 5px;
+}
+
+.width {
+    width: 1.5vw;
+}
+
+.time_div {
+    margin-top: 6vmax;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0em;
+}
+
+.todo_div {
+    width: 22vw;
+    display: table;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .todo_div {
+        width: 80vw;
+    }
+}
+
+.name_div {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rename,
+.naming {
+    bottom: 0;
+    right: 0;
+    position: fixed;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.clicked {
+    color: #7f8c8d;
+}
+
+.form,
+.greetings {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn 0.5s linear;
+}
+
+.red {
+    color: brown;
+}
+
+.hide {
+    display: none;
+}
+
+.showing {
+    display: inline;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 100%;
+    border: 3;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1vmax;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 1vmax;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+}
+
+
+/* reset input */
+
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+
+/* demo */
