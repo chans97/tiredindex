@@ -4,57 +4,64 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>javascript</title>
+    <title>지친 당신</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/f57bb9b3cd.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-    <div class="time_div">
-        <h2>
-            Keep Going
-        </h2>
-        <h1>
-        </h1>
+    <button type="button" onclick="initTotal()">Start</button>
 
+    <div>전체 피곤도</div>
+
+
+    <div id="label-container-total"></div>
+    <span id="index"></span>
+
+    <div>피곤 위치</div>
+    <div id="label-container"></div>
+
+    <!--여기서부터 드래그앤드롭-->
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="file-upload">
+        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
+            Image</button>
+
+        <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <h3>Drag and drop a file or select add Image</h3>
+            </div>
+        </div>
+        <div class="file-upload-content">
+            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <div class="image-title-wrap">
+                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
+                        class="image-title">Uploaded Image</span></button>
+            </div>
+        </div>
     </div>
+    <!--여기까지 드래그앤드롭-->
 
 
-    <div class="name_div">
-        <h4 class="greeting">
-            안녕하세요. 우측하단에 이름을 입력해주세요.
-        </h4>
-        <form class="form_js hide naming">
-            <input class="input_js" placeholder="이름을 입력해주세요.">
-            <button id="btn">확인</button>
-        </form>
 
-
-        <form class="clean_form hide">
-            <button id="clean" class="rename">이름 다시 입력하기</button>
-        </form>
-    </div>
-
-    <div class="todo_div">
-        <form class="js-toDoForm form__group field">
-            <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-            <label for="name" class="form__label">해야 할 일!</label>
-        </form>
-        <ul class="js-toDoList">
-        </ul>
-    </div>
-    <div class="geo_div">
-        <span id="loc-js" class="wheather"></span>
-        <span id="temp-js" class="wheather"></span>
-        <span id="wheather-js" class="wheather"></span>
-
-    </div>
 
 </body>
-<script src="time.js"></script>
-<script src="greeting.js"></script>
-<script src="todo.js"></script>
-<script src="geoinformation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+<script src="getimage.js"></script>
+<script src="tiredindex.js"></script>
+
+<!--
+Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
 
 </html>
