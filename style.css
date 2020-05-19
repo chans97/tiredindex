@@ -1,40 +1,15 @@
+
+
 body {
     font-family: sans-serif;
-    background-color: #eeeeee;
+    background-color: #ffffff;
   }
   
   .file-upload {
-    background-color: #ffffff;
-    width: 600px;
+    background-color: #f5f6fa;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  .file-upload-btn {
-    width: 100%;
-    margin: 0;
-    color: #fff;
-    background: #1FB264;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    border-bottom: 4px solid #15824B;
-    transition: all .2s ease;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  
-  .file-upload-btn:hover {
-    background: #1AA059;
-    color: #ffffff;
-    transition: all .2s ease;
-    cursor: pointer;
-  }
-  
-  .file-upload-btn:active {
-    border: 0;
-    transition: all .2s ease;
   }
   
   .file-upload-content {
@@ -55,14 +30,19 @@ body {
   
   .image-upload-wrap {
     margin-top: 20px;
-    border: 4px dashed #1FB264;
+    border: 2px dotted #95a5a6;
+    
+    color: #95a5a6;
+    
     position: relative;
+    transition: all 500ms;
   }
   
   .image-dropping,
   .image-upload-wrap:hover {
-    background-color: #1FB264;
-    border: 4px dashed #ffffff;
+    background-color: #7f8c8d;
+    border: 2px dotted #ffffff;
+    color: #ecf0f1;
   }
   
   .image-title-wrap {
@@ -77,7 +57,6 @@ body {
   .drag-text h3 {
     font-weight: 100;
     text-transform: uppercase;
-    color: #15824B;
     padding: 60px 0;
   }
   
@@ -116,3 +95,76 @@ body {
   }
 
 /* ______________여기까지는 이미지 드래그앤드롭____________*/
+
+.headtitle{
+  font-family: 'Nanum Gothic', sans-serif;;
+  font-size: 3vh;
+  color: #1e2227;
+}
+
+header{
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.downcon{
+  font-size: 3vh;
+  color: #34495e;
+}
+
+#test-result,#checkresult,#zoneindex{
+  display: none;
+}
+
+.line{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.desciptionapp-div{
+  
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 5vh;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+span{
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+.loading{
+  width: 10vh;
+
+}
+
+.waitingtext1{
+  color: #95a5a6;
+  font-size: 3vh;
+}
+
+.waitingtext2{
+  color: #95a5a6;
+  font-size: 2vh;
+}
+
+.result-message{
+}
+
+
+
+.checkresult {
+  font-family: 'Nanum Gothic', sans-serif;
+  background: #ff96a6;
+  color: #ffffff;
+  transition: all 600ms ease;
+  cursor: pointer;
+}
+
+.checkresult:hover {
+  background:#FC427B;
+}
+
+.uploadicon{
+  font-size:15vh ;
+}

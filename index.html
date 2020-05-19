@@ -6,44 +6,92 @@
     <meta name="viewport" content="width=device-width">
     <title>지친 당신</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="tailwind.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/f57bb9b3cd.js" crossorigin="anonymous"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <button type="button" onclick="initTotal()">Start</button>
-
-    <div>전체 피곤도</div>
-
-
-    <div id="label-container-total"></div>
-    <span id="index"></span>
-
-    <div>피곤 위치</div>
-    <div id="label-container"></div>
-
-    <!--여기서부터 드래그앤드롭-->
-    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <div class="file-upload">
-        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
-            Image</button>
-
-        <div class="image-upload-wrap">
-            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-            <div class="drag-text">
-                <h3>Drag and drop a file or select add Image</h3>
-            </div>
+<body class="w-full">
+    <header class="py-3 px-6 flex flex-row justify-between">
+        <div>
+            <span class="headtitle"><i class="far fa-tired mr-2"></i>피로도 측정기</span>
         </div>
-        <div class="file-upload-content">
-            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-            <div class="image-title-wrap">
-                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
-                        class="image-title">Uploaded Image</span></button>
-            </div>
+        <div class="flex flex-row items-center">
+            <i class="fas fa-caret-down downcon"></i>
         </div>
+    </header>
+
+    <div class="line border-b"></div>
+
+    <div class="desciptionapp-div flex flex-col items-center">
+        <span>인공지능이 보는 당신의 피로도</span>
+        <span>당신은 지금 얼마나 피곤하신가요?</span>
+
     </div>
-    <!--여기까지 드래그앤드롭-->
 
+
+    <div class="w-full p-8 ">
+        <!--여기서부터 드래그앤드롭-->
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <div class="file-upload rounded rounded-xl">
+
+            <div class="image-upload-wrap rounded rounded-lg">
+                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="drag-text flex flex-col justify-center items-center p-5">
+                    <span class="uploadicon"><i class="fas fa-file-upload"></i></span>
+                    <span>얼굴 사진을 업로드 해주세요!</span>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="file-upload-content">
+                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+                <div id="waiting" class="flex flex-col justify-center items-center">
+                    <img src="img/loading.svg" class="loading" />
+                    <span class="waitingtext2 mb-3">잠시만 기다려주세요.</span>
+                    <span class="waitingtext1">인공지능이 당신의 피로도를 계산 중입니다.</span>
+                </div>
+                <div id="checkresult" class="flex flex-col justify-center items-center">
+                    <span class="waitingtext1">결과가 나왔습니다!</span>
+                    <div>
+                        <button class="rounded rounded-bl border py-2 px-4 m-2 checkresult" onclick="showresult();">결과
+                            보기</button>
+                    </div>
+                </div>
+                <div id="test-result" class="flex flex-col justify-center items-center">
+                    <div class="onelineestimate">
+                        <span class="result-message"></span>
+                    </div>
+
+                    <div class="totalindex">
+                        <div id="label-container-total"></div>
+                        <span id="index"></span>
+                    </div>
+
+                    <div id="checkzone" class="checkzone">
+                        <span class="waitingtext1">어디가 그렇게 피곤해보여?</span>
+                        <button class="rounded rounded-bl border py-2 px-4 m-2 checkresult" onclick="showzone();">결과
+                            보기</button>
+                    </div>
+
+
+
+                    <div id="zoneindex" class="zoneindex">
+                        <div><button class="rounded rounded-bl border py-2 px-4 m-2 checkresult"
+                                onclick="slideupzone();">결과
+                                닫기</button></div>
+                        <span>피곤 위치</span>
+                        <div id="label-container"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--여기까지 드래그앤드롭-->
+    </div>
 
 
 

@@ -9,6 +9,7 @@ const weightTired = 1.58
 const weightGood = 0.1
 const minlndex = 0.25
 const totalrate = 0.75
+const realname = ["눈가 피로", "피부결 피로", "피부 피로누적", "얼굴 붓기"]
 var URL = "https://teachablemachine.withgoogle.com/models/x8l2RqV3V/";
 
 var model, webcam, labelContainer, maxPredictions;
@@ -48,9 +49,6 @@ async function predictTotal() {
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
             prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        labelContainer.childNodes[i].innerHTML = classPrediction;
-
-        labelContainer.childNodes[i].id = prediction[i].className
 
         if (prediction[i].className === `tired`) {
             var tiredindex = prediction[i].probability.toFixed(2)
@@ -58,8 +56,15 @@ async function predictTotal() {
             var goodindex = prediction[i].probability.toFixed(2)
         }
     }
-    var index = minlndex + ((tiredindex * weightTired) + (goodindex * weightGood)) * totalrate
-    indexDiv.innerText = `현재 피곤도 : ${index}`
+    var index = (minlndex + ((tiredindex * weightTired) + (goodindex * weightGood)) * totalrate) * 100
+    var index = Math.round(index * 100) / 100
+    var tiredindex = tiredindex * 100
+    var tiredindex = Math.round(tiredindex * 100) / 100
+    if (index > 100) {
+        indexDiv.innerText = `현재 피곤도 : ${tiredindex}%`
+    } else {
+        indexDiv.innerText = `현재 피곤도 : ${index}%`
+    }
 
 
 }
@@ -89,7 +94,6 @@ async function init() {
     }
 
     predict();
-
 }
 
 // run the webcam image through the image model
@@ -98,8 +102,60 @@ async function predict() {
     var image = document.getElementById("face-image")
     const prediction = await model.predict(image, false);
     for (let i = 0; i < maxPredictions; i++) {
+        prediction[i].className = realname[i]
+    }
+    prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+    var resultmessage;
+    switch (prediction[0].className) {
+        case realname[0]:
+            resultmessage = "눈가 피로(다크서클, 눈주름 등)"
+            break;
+        case realname[1]:
+            resultmessage = "피부결 피로(각질, 유분 과다 분비 등)"
+            break;
+        case realname[2]:
+            resultmessage = "피부 피로누적(기미, 잡티, 울긋불긋 등)"
+            break;
+        case realname[3]:
+            resultmessage = "얼굴 붓기"
+            break;
+
+        default:
+            resultmessage = "사진을 다시 찍어주세요."
+
+    }
+    $(".result-message").html(resultmessage);
+
+    $("#waiting").slideUp(600)
+    $("#checkresult").slideDown(600)
+
+
+
+
+
+    for (let i = 0; i < maxPredictions; i++) {
+        var zoneindex = prediction[i].probability.toFixed(2) * 100
+        var zoneindex = Math.round(zoneindex * 100) / 100
+        console.log(zoneindex)
         const classPrediction =
-            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            prediction[i].className + ": " + zoneindex + "%";
         labelContainer.childNodes[i].innerHTML = classPrediction;
     }
+}
+
+
+function showresult() {
+    $("#checkresult").slideUp(500)
+    $("#test-result").slideDown(500)
+}
+
+function showzone() {
+    $("#checkzone").slideUp(500)
+    $("#zoneindex").slideDown(500)
+}
+
+function slideupzone() {
+    $("#zoneindex").slideUp(500)
+    $("#checkzone").slideDown(500)
+
 }
