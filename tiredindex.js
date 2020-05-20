@@ -7,9 +7,9 @@
 const indexDiv = document.getElementById("index")
 const weightTired = 1.58
 const weightGood = 0.1
-const minlndex = 0.25
-const totalrate = 0.75
-const realname = ["눈가 피로", "피부결 피로", "피부 피로누적", "얼굴 붓기"]
+const minlndex = 0.20
+const totalrate = 0.80
+const realname = ["눈가 피로", "피부결 피로", "기미 잡티", "얼굴 붓기"]
 var URL = "https://teachablemachine.withgoogle.com/models/x8l2RqV3V/";
 
 var model, webcam, labelContainer, maxPredictions;
@@ -61,10 +61,19 @@ async function predictTotal() {
     var tiredindex = tiredindex * 100
     var tiredindex = Math.round(tiredindex * 100) / 100
     if (index > 100) {
-        indexDiv.innerText = `현재 피곤도 : ${tiredindex}%`
+        var resultindex = tiredindex;
     } else {
-        indexDiv.innerText = `현재 피곤도 : ${index}%`
+        var resultindex = index;
     }
+    var innerdiv = `<div class="w-2/12"><span class="tiredindex-class">피로도</span></div>
+    <div class="w-10/12 h-5 bg-red-200 rounded rounded-lg">
+        <div id="totalBar" name="${resultindex}" class="h-5 rounded rounded-lg flex flex-row items-center justify-center bg-red-500"
+            style="width: 0%"; >
+            <span class="tiredindex-class text-white">${resultindex}%</span>
+        </div>
+    </div>`
+    indexDiv.innerHTML = innerdiv
+
 
 
 }
@@ -89,8 +98,9 @@ async function init() {
     // append elements to the DOM
     labelContainer = document.getElementById("label-container");
     for (let i = 0; i < maxPredictions; i++) { // and class labels
-
-        labelContainer.appendChild(document.createElement("div"));
+        var divforzone = document.createElement("div");
+        divforzone.setAttribute("class", "w-full flex flex-row justify-between items-center my-3");
+        labelContainer.appendChild(divforzone);
     }
 
     predict();
@@ -102,11 +112,11 @@ async function predict() {
     var image = document.getElementById("face-image")
     const prediction = await model.predict(image, false);
     for (let i = 0; i < maxPredictions; i++) {
-        prediction[i].className = realname[i]
+        prediction[i].name = realname[i]
     }
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
     var resultmessage;
-    switch (prediction[0].className) {
+    switch (prediction[0].name) {
         case realname[0]:
             resultmessage = "눈가 피로(다크서클, 눈주름 등)"
             break;
@@ -125,7 +135,6 @@ async function predict() {
 
     }
     $(".result-message").html(resultmessage);
-
     $("#waiting").slideUp(600)
     $("#checkresult").slideDown(600)
 
@@ -138,7 +147,16 @@ async function predict() {
         var zoneindex = Math.round(zoneindex * 100) / 100
         console.log(zoneindex)
         const classPrediction =
-            prediction[i].className + ": " + zoneindex + "%";
+            `
+            <div class="w-3/12"><span class="tiredindex-class">${prediction[i].name}</span></div>
+            <div class="w-9/12 h-5 rounded rounded-lg ${prediction[i].className}">
+                <div id="${prediction[i].className}" name="${zoneindex}"
+                    class="px-3 h-5 rounded rounded-lg flex flex-row items-center justify-center ${prediction[i].className}bar"
+                    style="width: 0%">
+                    <span class="tiredindex-class text-white">${zoneindex}%</span>
+                </div>
+            </div>
+        `
         labelContainer.childNodes[i].innerHTML = classPrediction;
     }
 }
@@ -147,15 +165,31 @@ async function predict() {
 function showresult() {
     $("#checkresult").slideUp(500)
     $("#test-result").slideDown(500)
+    var resultindex = $("#totalBar").attr('name')
+    $("#totalBar").animate({ width: `${resultindex}%` }, 1000)
 }
 
 function showzone() {
-    $("#checkzone").slideUp(500)
-    $("#zoneindex").slideDown(500)
+    $("#checkzone").slideUp(500);
+    $("#zoneindex").slideDown(500);
+    var resultindex = $("#zone1").attr('name');
+    $("#zone1").animate({ width: `${resultindex}%` }, 1500);
+    var resultindex = $("#zone2").attr('name');
+    $("#zone2").animate({ width: `${resultindex}%` }, 1500);
+    var resultindex = $("#zone3").attr('name');
+    $("#zone3").animate({ width: `${resultindex}%` }, 1500);
+    var resultindex = $("#zone4").attr('name');
+    $("#zone4").animate({ width: `${resultindex}%` }, 1500);
+
+
 }
 
 function slideupzone() {
-    $("#zoneindex").slideUp(500)
-    $("#checkzone").slideDown(500)
+
+    $("#zone1").animate({ width: `0%` }, 800);
+    $("#zone2").animate({ width: `0%` }, 800);
+    $("#zone3").animate({ width: `0%` }, 800);
+    $("#zone4").animate({ width: `0%` }, 600, function () { $("#checkzone").slideDown(600); $("#zoneindex").slideUp(600); });
+
 
 }

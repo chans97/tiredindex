@@ -6,7 +6,7 @@ body {
   }
   
   .file-upload {
-    background-color: #f5f6fa;
+    background-color: #f9f9f9;
     width: 100%;
     margin: 0 auto;
     padding: 20px;
@@ -167,4 +167,40 @@ span{
 
 .uploadicon{
   font-size:15vh ;
+}
+
+.tiredindex-class{
+  font-size:2.2vh
+}
+
+.zone1{
+  background-color: #a29bfe;
+}
+
+.zone1bar{
+  background-color:#6c5ce7;
+}
+
+.zone2{
+  background-color: #55efc4;
+}
+
+.zone2bar{
+  background-color:#00b894;
+}
+
+.zone3{
+  background-color: #ffeaa7;
+}
+
+.zone3bar{
+  background-color:#fdcb6e;
+}
+
+.zone4{
+  background-color: #fab1a0;
+}
+
+.zone4bar{
+  background-color:#e17055;
 }
