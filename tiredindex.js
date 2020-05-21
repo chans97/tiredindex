@@ -9,7 +9,7 @@ const weightTired = 1.58
 const weightGood = 0.1
 const minlndex = 0.20
 const totalrate = 0.80
-const realname = ["눈가 피로", "피부결 피로", "기미 잡티", "얼굴 붓기"]
+const realname = ["눈가 피로", "피부 피로", "기미 잡티", "얼굴 붓기"]
 var URL = "https://teachablemachine.withgoogle.com/models/x8l2RqV3V/";
 
 var model, webcam, labelContainer, maxPredictions;
@@ -65,14 +65,39 @@ async function predictTotal() {
     } else {
         var resultindex = index;
     }
-    var innerdiv = `<div class="w-2/12"><span class="tiredindex-class">피로도</span></div>
-    <div class="w-10/12 h-5 bg-red-200 rounded rounded-lg">
-        <div id="totalBar" name="${resultindex}" class="h-5 rounded rounded-lg flex flex-row items-center justify-center bg-red-500"
+    var innerdiv = `<div class="w-2/12 mr-2"><span class="tiredindex-total-class">피로도</span></div>
+    <div class="w-10/12 h-6 bg-red-200 rounded rounded-lg">
+        <div id="totalBar" name="${resultindex}" class="h-6 rounded rounded-lg flex flex-row items-center justify-center bg-red-500"
             style="width: 0%"; >
             <span class="tiredindex-class text-white">${resultindex}%</span>
         </div>
     </div>`
     indexDiv.innerHTML = innerdiv
+
+    if (resultindex < 35) {
+        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-green">${resultindex}%</span> 피곤한
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+    } else if (resultindex < 50) {
+        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+    } else if (resultindex < 75) {
+        var totalmessage = `<span class="oneline-puple onelinemessage">얼굴이 시퍼래 가지고, 꼭 상한 시래기 같구만...</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+    } else if (resultindex < 100) {
+        var totalmessage = `<span class="oneline-red onelinemessage ">당장 집으로 가서 발 닦고 잠이나자!</span>
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+                지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+    } else {
+        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...</span></div>`
+    }
+
+    $(".onelineestimate").html(totalmessage);
 
 
 
@@ -121,7 +146,7 @@ async function predict() {
             resultmessage = "눈가 피로(다크서클, 눈주름 등)"
             break;
         case realname[1]:
-            resultmessage = "피부결 피로(각질, 유분 과다 분비 등)"
+            resultmessage = "피부 피로(각질, 유분 과다 분비 등)"
             break;
         case realname[2]:
             resultmessage = "피부 피로누적(기미, 잡티, 울긋불긋 등)"
@@ -134,7 +159,12 @@ async function predict() {
             resultmessage = "사진을 다시 찍어주세요."
 
     }
-    $(".result-message").html(resultmessage);
+    var zonedetail = `<span class="tiredindex-class border-b border-black pb-1"><i class="fas fa-check border-b pb-2"></i>"${prediction[0].name}" 자세히 알아보기!</span>`
+    var zonemessage = `<span  class="red-text onelinezone">${resultmessage}</span>`
+    var tipmessage = `<span class="tiredindex-class border-b border-black pb-1"><i class="fas fa-check border-b pb-2"></i>"${prediction[0].name}" 해소하기!</span>`
+    $(".zonedetail").html(zonedetail);
+    $(".zoneestimate").html(zonemessage);
+    $(".gettips").html(tipmessage);
     $("#waiting").slideUp(600)
     $("#checkresult").slideDown(600)
 
@@ -145,13 +175,20 @@ async function predict() {
     for (let i = 0; i < maxPredictions; i++) {
         var zoneindex = prediction[i].probability.toFixed(2) * 100
         var zoneindex = Math.round(zoneindex * 100) / 100
-        console.log(zoneindex)
+
+        if (zoneindex < 5) {
+            var zonecolor = "gray";
+        } else if (zoneindex < 50) {
+            var zonecolor = "green";
+        } else {
+            var zonecolor = "red";
+        }
         const classPrediction =
             `
             <div class="w-3/12"><span class="tiredindex-class">${prediction[i].name}</span></div>
-            <div class="w-9/12 h-5 rounded rounded-lg ${prediction[i].className}">
+            <div class="w-9/12 h-5 rounded rounded-lg ${zonecolor}">
                 <div id="${prediction[i].className}" name="${zoneindex}"
-                    class="px-3 h-5 rounded rounded-lg flex flex-row items-center justify-center ${prediction[i].className}bar"
+                    class="px-3 h-5 rounded rounded-lg flex flex-row items-center justify-center ${zonecolor}bar"
                     style="width: 0%">
                     <span class="tiredindex-class text-white">${zoneindex}%</span>
                 </div>

@@ -11,7 +11,12 @@ body {
     margin: 0 auto;
     padding: 20px;
   }
-  
+  .photodiv{
+    padding: 2vw;
+    padding-top: 2rem;
+
+  }
+
   .file-upload-content {
     display: none;
     text-align: center;
@@ -140,12 +145,12 @@ span{
 
 .waitingtext1{
   color: #95a5a6;
-  font-size: 3vh;
+  font-size: 2.1vh;
 }
 
 .waitingtext2{
   color: #95a5a6;
-  font-size: 2vh;
+  font-size: 1.8vh;
 }
 
 .result-message{
@@ -170,37 +175,66 @@ span{
 }
 
 .tiredindex-class{
-  font-size:2.2vh
+  font-size:1.7vh
 }
 
-.zone1{
-  background-color: #a29bfe;
+.tiredindex-total-class{
+  font-size:2vh
 }
 
-.zone1bar{
-  background-color:#6c5ce7;
+.green{
+  background-color:#00b8933d;
 }
 
-.zone2{
-  background-color: #55efc4;
-}
-
-.zone2bar{
+.greenbar{
   background-color:#00b894;
 }
 
-.zone3{
-  background-color: #ffeaa7;
+.red{
+  background-color:#f05e3a44;
 }
 
-.zone3bar{
-  background-color:#fdcb6e;
+.redbar{
+  background-color:#f05e3a;
 }
 
-.zone4{
-  background-color: #fab1a0;
+.gray{
+  background-color:#9493934b;
 }
 
-.zone4bar{
-  background-color:#e17055;
+.graybar{
+  background-color:#949393;
+}
+
+.oneline-green{
+ color: #2ecc71; 
+}
+.oneline-blue{
+ color: #3498db; 
+}
+.oneline-puple{
+ color: #9b59b6; 
+}
+.oneline-red{
+ color: #c0392b; 
+}
+.oneline-gray{
+ color: #95a5a6; 
+}
+
+.onelinemessage{
+  font-size:2.3vh
+}
+
+.onelinedescription{
+  color: #666f70;
+  font-size:1.8vh
+}
+
+.red-text{
+  color: #f05e3a;;
+}
+
+.onelinezone{
+  font-size:2.1vh
 }

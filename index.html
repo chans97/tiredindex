@@ -24,13 +24,15 @@
     <div class="line border-b"></div>
 
     <div class="desciptionapp-div flex flex-col items-center">
-        <span>인공지능이 보는 당신의 피로도</span>
-        <span>당신은 지금 얼마나 피곤하신가요?</span>
+        <div class="flex flex-col items-center">
+            <span>Dr.피로가 진단하는 피로도!</span>
+            <span>당신은 지금 얼마나 피곤하신가요?</span>
+        </div>
 
     </div>
 
 
-    <div class="w-full p-8 ">
+    <div class="w-full photodiv">
         <!--여기서부터 드래그앤드롭-->
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <div class="file-upload rounded rounded-xl">
@@ -48,14 +50,14 @@
 
 
             <div class="file-upload-content">
-                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+                <img class="file-upload-image rounded rounded-xl" id="face-image" src="#" alt="your image" />
                 <div id="waiting" class="flex flex-col justify-center items-center">
                     <img src="img/loading.svg" class="loading" />
-                    <span class="waitingtext2 mb-3">잠시만 기다려주세요.</span>
-                    <span class="waitingtext1">인공지능이 당신의 피로도를 계산 중입니다.</span>
+                    <span class="waitingtext2 mb-3">조금만 기다리라구..</span>
+                    <span class="waitingtext1">이 Dr.피로가 자네 얼굴을 분석 중이여!</span>
                 </div>
                 <div id="checkresult" class="flex flex-col justify-center items-center">
-                    <span class="waitingtext1">결과가 나왔습니다!</span>
+                    <span class="waitingtext1">흠...결과가 나왔구만.</span>
                     <div>
                         <button id="checktotal" class="rounded rounded-bl border py-2 px-4 m-2 checkresult"
                             onclick="showresult();">결과
@@ -63,20 +65,18 @@
                     </div>
                 </div>
                 <div id="test-result" class="flex flex-col justify-center items-center">
-                    <div class="onelineestimate">
-                        <span class="result-message"></span>
+                    <div class="onelineestimate flex flex-col justify-center items-center">
                     </div>
 
-                    <div class="totalindex  my-3">
+                    <div class="totalindex  my-8">
                         <div id="label-container-total"></div>
                         <div id="index" class="flex flex-row justify-between items-center">
-
                         </div>
                     </div>
 
-                    <div id="checkzone" class="checkzone">
-                        <span class="waitingtext1">어디가 그렇게 피곤해보여?</span>
-                        <button class="rounded rounded-bl border py-2 px-4 m-2 checkresult" onclick="showzone();">결과
+                    <div id="checkzone" class="checkzone flex flex-col justify-center items-center">
+                        <span class="waitingtext1">어디가 그렇게 피곤해보이나요?</span>
+                        <button class="rounded rounded-bl border py-2 px-4 m-2 checkresult" onclick="showzone();">원인
                             보기</button>
                     </div>
 
@@ -84,10 +84,16 @@
 
                     <div id="zoneindex" class="zoneindex">
                         <div><button class="rounded rounded-bl border py-2 px-4 m-2 checkresult"
-                                onclick="slideupzone();">결과
+                                onclick="slideupzone();">상세
                                 닫기</button></div>
-                        <span>피곤 위치</span>
+
+                        <div class="zoneestimate mt-5">
+                        </div>
                         <div id="label-container" class="flex flex-col justify-between items-center"></div>
+                        <div class="zonedetail mt-5 ">
+                        </div>
+                        <div class="gettips mt-3 ">
+                        </div>
                     </div>
 
                 </div>
