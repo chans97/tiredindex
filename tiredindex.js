@@ -5,10 +5,10 @@
 
 //__________________________________________종합 피로지수 _____________________________________________
 const indexDiv = document.getElementById("index")
-const weightTired = 1.58
+const weightTired = 1.6
 const weightGood = 0.1
-const minlndex = 0.20
-const totalrate = 0.80
+const minlndex = 0.10
+const totalrate = 0.90
 const realname = ["눈가 피로", "피부 피로", "기미 잡티", "얼굴 붓기"]
 var URL = "https://teachablemachine.withgoogle.com/models/x8l2RqV3V/";
 
@@ -229,4 +229,23 @@ function slideupzone() {
     $("#zone4").animate({ width: `0%` }, 600, function () { $("#checkzone").slideDown(600); $("#zoneindex").slideUp(600); });
 
 
+}
+
+function showsubtitle() {
+    $("#subtitle").slideDown(450);
+    $("#opensubtitle").hide();
+    $(".line").hide();
+    $("#closesubtitle").show();
+    $("header").addClass("bg-gray-800")
+    $(".headtitle").addClass("text-gray-200")
+}
+
+
+function hidesubtitle() {
+    $("#subtitle").slideUp(340);
+    $(".line").show();
+    $("#opensubtitle").show();
+    $("#closesubtitle").hide();
+    $("header").removeClass("bg-gray-800")
+    $(".headtitle").removeClass("text-gray-200")
 }

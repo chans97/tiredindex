@@ -117,12 +117,12 @@ header{
   color: #34495e;
 }
 
-#test-result,#checkresult,#zoneindex{
+#test-result,#checkresult,#zoneindex,#closesubtitle,#subtitle{
   display: none;
 }
 
 .line{
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -237,4 +237,25 @@ span{
 
 .onelinezone{
   font-size:2.1vh
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.transition {
+  transition: all .2s ease;
+}
+
+.transition-middle {
+  transition: all .35s ease;
+}
+
+.subheadtitle{
+  font-family: 'Nanum Gothic', sans-serif;;
+  font-size: 1.8vh;
+  color: #1e2227;
 }
