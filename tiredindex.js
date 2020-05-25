@@ -195,7 +195,7 @@ function writeResult1(resultindex) {
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
         상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
     } else if (resultindex < 100) {
-        var totalmessage = `<span class="oneline-red onelinemessage ">자네 눈 좀 보게!! 눈이 판다야 판다.</span><span class="oneline-red onelinemessage "> 대나무가 주식인가?</span>
+        var totalmessage = `<span class="oneline-red onelinemessage ">자네 눈 좀 보게!! 눈이 판다야 판다.</span><span class="oneline-red onelinemessage ">오늘 저녁은 대나무인가? </span>
         <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
