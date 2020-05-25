@@ -7,8 +7,8 @@
 const indexDiv = document.getElementById("index")
 const weightTired = 1.6
 const weightGood = 0.1
-const minlndex = 0.10
-const totalrate = 0.90
+const minlndex = 0.05
+const totalrate = 0.70
 const realname = ["눈가 피로", "피부 피로", "기미 잡티", "얼굴 붓기"]
 var URL = "https://teachablemachine.withgoogle.com/models/x8l2RqV3V/";
 
@@ -37,7 +37,7 @@ async function initTotal() {
     }
 
     predictTotal();
-    init();
+
 }
 
 // run the webcam image through the image model
@@ -74,30 +74,9 @@ async function predictTotal() {
     </div>`
     indexDiv.innerHTML = innerdiv
 
-    if (resultindex < 35) {
-        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
-        지금 <span class="oneline-green">${resultindex}%</span> 피곤한
-        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
-    } else if (resultindex < 50) {
-        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
-        지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
-        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
-    } else if (resultindex < 75) {
-        var totalmessage = `<span class="oneline-puple onelinemessage">얼굴이 시퍼래 가지고, 꼭 상한 시래기 같구만...</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
-        지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
-        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
-    } else if (resultindex < 100) {
-        var totalmessage = `<span class="oneline-red onelinemessage ">당장 집으로 가서 발 닦고 잠이나자!</span>
-        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
-                지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
-    } else {
-        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
-        지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...</span></div>`
-    }
 
-    $(".onelineestimate").html(totalmessage);
+
+    init(resultindex);
 
 
 
@@ -106,7 +85,7 @@ async function predictTotal() {
 
 //__________________________________________zone별 피로지수 _____________________________________________
 
-async function init() {
+async function init(resultindex) {
     var URL = "https://teachablemachine.withgoogle.com/models/0pTEc9Ua5/";
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
@@ -128,11 +107,11 @@ async function init() {
         labelContainer.appendChild(divforzone);
     }
 
-    predict();
+    predict(resultindex);
 }
 
 // run the webcam image through the image model
-async function predict() {
+async function predict(resultindex) {
     // predict can take in an image, video or canvas html element
     var image = document.getElementById("face-image")
     const prediction = await model.predict(image, false);
@@ -144,12 +123,15 @@ async function predict() {
     switch (prediction[0].name) {
         case realname[0]:
             resultmessage = "눈가 피로(다크서클, 눈주름 등)"
+            writeResult1(resultindex);
             break;
         case realname[1]:
             resultmessage = "피부 피로(각질, 유분 과다 분비 등)"
+            writeResult2(resultindex);
             break;
         case realname[2]:
             resultmessage = "피부 피로누적(기미, 잡티, 울긋불긋 등)"
+            writeResult3(resultindex);
             break;
         case realname[3]:
             resultmessage = "얼굴 붓기"
@@ -196,6 +178,115 @@ async function predict() {
         `
         labelContainer.childNodes[i].innerHTML = classPrediction;
     }
+
+
+}
+function writeResult1(resultindex) {
+    if (resultindex < 35) {
+        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-green">${resultindex}%</span> 피곤한
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+    } else if (resultindex < 50) {
+        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+    } else if (resultindex < 75) {
+        var totalmessage = `<span class="oneline-puple onelinemessage">자네 다크서클이... 배꼽까지 내려갈 기세야..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가..?</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+    } else if (resultindex < 100) {
+        var totalmessage = `<span class="oneline-red onelinemessage ">자네 눈 좀 보게!! 눈이 판다야 판다.</span><span class="oneline-red onelinemessage "> 대나무가 주식인가?</span>
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+                지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+    } else {
+        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...</span></div>`
+    }
+
+    $(".onelineestimate").html(totalmessage);
+}
+
+function writeResult2(resultindex) {
+    if (resultindex < 35) {
+        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-green">${resultindex}%</span> 피곤한
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+    } else if (resultindex < 50) {
+        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+    } else if (resultindex < 75) {
+        var totalmessage = `<span class="oneline-puple onelinemessage">자네 얼굴에 기름 뜬 것 좀 보게나. </span><span class="oneline-puple onelinemessage">기름 걱정은 안해도 되겠어~</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+    } else if (resultindex < 100) {
+        var totalmessage = `<span class="oneline-red onelinemessage ">자네 피부가 꼭 축처진 시래기같다네!!</span>
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+                지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+    } else {
+        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div>`
+    }
+
+    $(".onelineestimate").html(totalmessage);
+}
+
+function writeResult3(resultindex) {
+    if (resultindex < 35) {
+        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-green">${resultindex}%</span> 피곤한
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+    } else if (resultindex < 50) {
+        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+    } else if (resultindex < 75) {
+        var totalmessage = `<span class="oneline-puple onelinemessage">피로가 얼굴까지 올라와서, 얼굴이 부었네..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+    } else if (resultindex < 100) {
+        var totalmessage = `<span class="oneline-red onelinemessage ">뭐 오줌참고 있는가? 얼굴이 누래!!</span>
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+                지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+    } else {
+        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div>`
+    }
+
+    $(".onelineestimate").html(totalmessage);
+}
+
+function writeResult4(resultindex) {
+    if (resultindex < 35) {
+        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-green">${resultindex}%</span> 피곤한
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+    } else if (resultindex < 50) {
+        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+    } else if (resultindex < 75) {
+        var totalmessage = `<span class="oneline-puple onelinemessage">혹시 어제 라면 먹고 잤나? 얼굴이 많이 부었구만...</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+    } else if (resultindex < 100) {
+        var totalmessage = `<span class="oneline-red onelinemessage ">호빵맨이 질투할만큼, 얼굴이 부었구만!</span>
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+                지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+    } else {
+        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div>`
+    }
+
+    $(".onelineestimate").html(totalmessage);
 }
 
 
