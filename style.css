@@ -279,9 +279,17 @@ footer {
   padding-right: 1.6vh;
 }
 
-.py24vh {
+.py13vh {
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
+}
+
+.pt13vh {
+  padding-top: 1.3vh;
+}
+
+.pb05vh {
+  padding-top: 0.5vh;
 }
 
 .px24vh {
@@ -289,6 +297,22 @@ footer {
   padding-right: 2.4vh;
 }
 
+.px15vh {
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+}
+
+.mb14vh{
+  margin-bottom: 1.4vh;
+}
+
 .mr14vh{
   margin-right: 1.4vh;
+}
+.mr10vh{
+  margin-right: 1.0vh;
+}
+
+.mr8vh{
+  margin-right: 0.8vh;
 }
