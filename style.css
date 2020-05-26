@@ -130,7 +130,7 @@ header{
   
   width: 70%;
   margin: 0 auto;
-  margin-top: 5vh;
+  margin-top: 3vh;
   font-family: 'Nanum Gothic', sans-serif;
 }
 span{
@@ -141,6 +141,19 @@ span{
 .loading{
   width: 10vh;
 
+}
+
+.text1{
+  font-size: 2.1vh;
+}
+
+.text2{
+  font-size: 1.9vh;
+}
+
+.text3{
+  font-size: 1.9vh;
+  margin-bottom: 1.2vh;
 }
 
 .waitingtext1{
@@ -164,6 +177,7 @@ span{
   color: #ffffff;
   transition: all 600ms ease;
   cursor: pointer;
+  height: 4.5vh;
 }
 
 .checkresult:hover {
@@ -240,7 +254,7 @@ span{
 }
 
 footer {
-  left: 0;
+  top: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -258,4 +272,23 @@ footer {
   font-family: 'Nanum Gothic', sans-serif;;
   font-size: 1.8vh;
   color: #1e2227;
+}
+
+.px16vh {
+  padding-left: 1.6vh;
+  padding-right: 1.6vh;
+}
+
+.py24vh {
+  padding-top: 1.3vh;
+  padding-bottom: 1.3vh;
+}
+
+.px24vh {
+  padding-left: 2.4vh;
+  padding-right: 2.4vh;
+}
+
+.mr14vh{
+  margin-right: 1.4vh;
 }

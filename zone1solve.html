@@ -32,7 +32,6 @@
 </head>
 
 <body class="w-full">
-
     <header class="w-full  flex flex-col items-between justify-between fixed transition-middle   rounded-b-lg">
         <div class="py24vh px24vh  flex flex-row justify-between">
             <div class="flex flex-row w-full items-center justify-start">
@@ -52,8 +51,8 @@
         </div>
         <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
             <div class="flex flex-row w-full items-center justify-end mr-4 mb-3">
-                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
-                    onclick="location.href='nohim.html'">힘빠지는 게시판<i class="fas fa-sticky-note ml-3"></i></span>
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">힘빠지는 게시판<i
+                        class="fas fa-sticky-note ml-3"></i></span>
             </div>
             <div class="flex flex-row w-full items-center justify-end mr-4">
                 <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">힘나는 게시판<i
@@ -88,8 +87,8 @@
             <div class="flex flex-row justify-center">
 
                 <div class="flex flex-col items-start">
-                    <span class="text1" style="margin-top:5.8vh">Dr.피로가 진단하는 피로도!</span>
-                    <span class="text1">당신은 지금 얼마나 피곤하신가요?</span>
+                    <span class="text1" style="margin-top:5.8vh">Dr.피로!!</span>
+                    <span class="text1">"눈가 피로" 해소는요??</span>
                 </div>
                 <div class="flex flex-col items-end">
                     <img src="img/instant.jpg" alt="" srcset="" class=""
@@ -101,102 +100,40 @@
 
 
         <div class="w-full photodiv">
-            <!--여기서부터 드래그앤드롭-->
             <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
             <div class="file-upload rounded rounded-xl">
-
-                <div class="image-upload-wrap rounded rounded-lg">
-                    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                    <div class="drag-text flex flex-col justify-center items-center p-5">
-                        <span class="uploadicon"><i class="fas fa-file-upload"></i></span>
-                        <span class="waitingtext1">자네 얼굴 좀 보여 주게나!</span>
-                    </div>
-
+                <div class="flex flex-col ">
+                    <span class="text3 mb-4">
+                        제가 눈가피로에 좋은 마사지를 알려드릴테니 잘 따라해봐요~~!</span>
+                    <span class="text3">
+                        1. 눈썹 앞머리 부분이 지압점이다. 눈썹뼈 바로 아래 손가락이 쑥 들어가는 부분을 지그시 누르면서 눈의 피로를 푼다.
+                    </span> <span class="text3">
+                        2. 눈썹뼈를 따라서 눈썹꼬리까지 조금씩 옮겨가며 늘려준다.
+                    </span><span class="text3">
+                        3. 눈 밑도 마찬가지. 눈 앞머리와 광대뼈 사이를 손가락으로 눌러주고 눈꼬리 쪽으로 살살 밀어가며 마사지 한다.
+                    </span>
                 </div>
-
-
-
-
-                <div class="file-upload-content">
-                    <img class="file-upload-image rounded rounded-xl" id="face-image" src="#" alt="your image" />
-                    <div id="waiting" class="flex flex-col justify-center items-center">
-                        <img src="img/loading.svg" class="loading" />
-                        <span class="waitingtext2 mb-3">조금만 기다리라구..</span>
-                        <span class="waitingtext1">이 Dr.피로가 자네 얼굴을 분석 중이여!</span>
-                    </div>
-                    <div id="checkresult" class="flex flex-col justify-center items-center">
-                        <span class="waitingtext1">흠...결과가 나왔구만...자네는 말이야..</span>
-                        <div>
-                            <button id="checktotal" class="text-center rounded rounded-lg border px-4 m-2 checkresult"
-                                onclick="showresult();"><span class="text2">결과
-                                    보기</span></button>
-                        </div>
-                    </div>
-                    <div id="test-result" class="flex flex-col justify-center items-center">
-                        <div class="onelineestimate flex flex-col justify-center items-center">
-                        </div>
-
-                        <div class="totalindex  my-8">
-                            <div id="label-container-total"></div>
-                            <div id="index" class="flex flex-row justify-between items-center">
-                            </div>
-                        </div>
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <div class="addthis_inline_share_toolbox_7w5p my-5"></div>
-
-
-                        <div id="checkzone" class="checkzone flex flex-col justify-center items-center">
-                            <span class="waitingtext1">어디가 그렇게 피곤해보이나요?</span>
-                            <button class="rounded rounded-lg border text-center  px-4 m-2 checkresult"
-                                onclick="showzone();"><span class="text2">원인
-                                    보기</span></button>
-                        </div>
-
-
-
-                        <div id="zoneindex" class="zoneindex">
-                            <div><button class="rounded rounded-lg border text-center  px-4 m-2 checkresult"
-                                    onclick="slideupzone();"><span class="text2">상세
-                                        닫기</span></button></div>
-
-                            <div class="zoneestimate mt-5">
-                            </div>
-                            <div id="label-container" class="flex flex-col justify-between items-center"></div>
-                            <div class="zonedetail mt-5 ">
-                            </div>
-                            <div class="gettips mt-3 ">
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="flex flex-col mt-10 border border-gray-600 rounded rounded-lg p-6">
+                    <div class="border-b-2 border-black mb-6">
+                        <span class="text1">
+                            <i class="far fa-check-square mr-2"></i>생기 있는 얼굴을 만드는 TIP!</span></div>
+                    <span class=" text3">
+                        쿨링 효과로 눈가 부기를 쫙 빼주는 제품을 써야 합니다.
+                    </span> <span class="text3">
+                        마사지하며 바를 수 있는 롤온 타입이나 어플리케이터가 장착된 아이크림을 눈썹뼈 부근까지 바를 것.
+                    </span>
+                </div>
+                <div class="flex flex-row justify-end mt-10">
+                    <a href="index.html">
+                        <span
+                            class="tiredindex-class border-b border-black pb-1  hover:text-blue-500 hover:border-blue-500 transition"><i
+                                class="fas fa-check border-b pb-2 mr-2" aria-hidden="true"></i>피로도 다시 측정하기</span></a>
                 </div>
             </div>
-            <!--여기까지 드래그앤드롭-->
         </div>
 
 
     </div>
-    <div id="disqus_thread"></div>
-    <script>
-
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://indexfatigue.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
 
     <footer>
         <div class="border-b mt-64"></div>
@@ -210,7 +147,6 @@
         </div>
     </footer>
 </body>
-
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 

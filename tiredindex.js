@@ -66,9 +66,9 @@ async function predictTotal() {
         var resultindex = index;
     }
     var innerdiv = `<div class="w-2/12 mr-2"><span class="tiredindex-total-class">피로도</span></div>
-    <div class="w-10/12 h-6 bg-red-200 rounded rounded-lg">
-        <div id="totalBar" name="${resultindex}" class="h-6 rounded rounded-lg flex flex-row items-center justify-center bg-red-500"
-            style="width: 0%"; >
+    <div class="w-10/12 bg-red-200 rounded rounded-xl" style=" height: 3vh;">
+        <div id="totalBar" name="${resultindex}" class="rounded rounded-xl flex flex-row items-center justify-center bg-red-500"
+            style="width: 0%; height: 3vh;" >
             <span class="tiredindex-class text-white">${resultindex}%</span>
         </div>
     </div>`
@@ -141,9 +141,9 @@ async function predict(resultindex) {
             resultmessage = "사진을 다시 찍어주세요."
 
     }
-    var zonedetail = `<span class="tiredindex-class border-b border-black pb-1"><i class="fas fa-check border-b pb-2"></i>"${prediction[0].name}" 자세히 알아보기!</span>`
+    var zonedetail = `<a href="${prediction[0].className}detail.html"><span class="tiredindex-class border-b border-black pb-1 hover:text-blue-500 hover:border-blue-500 transition"><i class="fas fa-check border-b pb-2"></i>"${prediction[0].name}" 자세히 알아보기!</span></a>`
     var zonemessage = `<span  class="red-text onelinezone">${resultmessage}</span>`
-    var tipmessage = `<span class="tiredindex-class border-b border-black pb-1"><i class="fas fa-check border-b pb-2"></i>"${prediction[0].name}" 해소하기!</span>`
+    var tipmessage = `<a href="${prediction[0].className}solve.html"><span class="tiredindex-class border-b border-black pb-1 hover:text-blue-500 hover:border-blue-500 transition"><i class="fas fa-check border-b pb-2"></i>"${prediction[0].name}" 해소하기!</span></a>`
     $(".zonedetail").html(zonedetail);
     $(".zoneestimate").html(zonemessage);
     $(".gettips").html(tipmessage);
@@ -168,10 +168,10 @@ async function predict(resultindex) {
         const classPrediction =
             `
             <div class="w-3/12"><span class="tiredindex-class">${prediction[i].name}</span></div>
-            <div class="w-9/12 h-5 rounded rounded-lg ${zonecolor}">
+            <div class="w-9/12 rounded rounded-xl ${zonecolor}" style="height: 2.4vh;">
                 <div id="${prediction[i].className}" name="${zoneindex}"
-                    class="px-3 h-5 rounded rounded-lg flex flex-row items-center justify-center ${zonecolor}bar"
-                    style="width: 0%">
+                    class="px16vh rounded rounded-xl flex flex-row items-center justify-center ${zonecolor}bar"
+                    style="width: 0%; height: 2.4vh;">
                     <span class="tiredindex-class text-white">${zoneindex}%</span>
                 </div>
             </div>
