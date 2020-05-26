@@ -17,7 +17,9 @@
     <meta name="twitter:description" content="인공지능 피로도 측정기! Dr.피로가 여러분의 피로도를 측정해드립니다.">
     <meta name="twitter:image" content="">
     <meta name="twitter:domain" content="https://fatigueindex.netlify.app/">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="tailwind.css" rel="stylesheet" type="text/css" />
@@ -32,7 +34,8 @@
 </head>
 
 <body class="w-full">
-    <header class="w-full  flex flex-col items-between justify-between fixed transition-middle   rounded-b-lg">
+    <header class="w-full  flex flex-col items-between justify-between fixed transition-middle   rounded-b-lg"
+        style="z-index:1000;">
         <div class="py24vh px24vh  flex flex-row justify-between">
             <div class="flex flex-row w-full items-center justify-start">
 
@@ -51,12 +54,13 @@
         </div>
         <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
             <div class="flex flex-row w-full items-center justify-end mr-4 mb-3">
-                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">힘빠지는 게시판<i
-                        class="fas fa-sticky-note ml-3"></i></span>
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
+                    onclick="location.href='nohim.html'">Dr.피로 상담소<i class="fas fa-sticky-note ml-3"></i></span>
             </div>
             <div class="flex flex-row w-full items-center justify-end mr-4">
-                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">힘나는 게시판<i
-                        class="far fa-sticky-note ml-3"></i></span>
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
+                    onclick="location.href='yeshim.html'">Dr.피로가 전하는
+                    위로의 말<i class="far fa-sticky-note ml-3"></i></span>
             </div>
         </div>
         <div class="line border-b"></div>
@@ -69,16 +73,7 @@
                 <span class="headtitle transition-middle">피로도 측정기</span>
             </div>
         </div>
-        <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
-            <div class="flex flex-row w-full items-center justify-end mr-4 mb-3">
-                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">힘빠지는 게시판<i
-                        class="fas fa-sticky-note ml-3"></i></span>
-            </div>
-            <div class="flex flex-row w-full items-center justify-end mr-4">
-                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">힘나는 게시판<i
-                        class="far fa-sticky-note ml-3"></i></span>
-            </div>
-        </div>
+
         <div class="line border-b"></div>
     </header>
 
@@ -88,7 +83,7 @@
 
                 <div class="flex flex-col items-start">
                     <span class="text1" style="margin-top:5.8vh">Dr.피로!!</span>
-                    <span class="text1">나 오늘 너무 힘들었어요...</span>
+                    <span class="text1">나 오늘 너무 힘들었어요.....</span>
                 </div>
                 <div class="flex flex-col items-end">
                     <img src="img/instant.jpg" alt="" srcset="" class=""
@@ -100,23 +95,46 @@
 
 
         <div class="w-full photodiv">
-            <div class="file-upload rounded rounded-xl">
+            <div class="file-upload rounded rounded-xl  bg-gray-300">
                 <div class="flex flex-col ">
-                    <span class="text3">
+                    <span class="text1">
                         내가 찬찬히 들어줄테니, 천천히 말해봐.....
                     </span>
                 </div>
-
             </div>
         </div>
         <div class="w-full photodiv">
             <div class="file-upload rounded rounded-xl">
                 <div class="flex flex-col ">
                     <span class="text3">
-                        오늘 하루 힘들었던 일을 자유롭게 작성해주세요..Dr.피로가 친절히 상담해드립니다.
+                        오늘 하루 힘들었던 일을 자유롭게 작성해주세요..
+                    </span> <span class="text3">
+                        Dr.피로가 친절히 상담해드립니다.
                     </span>
-
                 </div>
+                <div class="flex flex-col rounded rounded-xl border border-4 py24vh px24vh">
+                    <div id="disqus_thread"></div>
+                </div>
+                <script>
+
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function () { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://indexoffatiguenohim.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                        powered by Disqus.</a></noscript>
 
             </div>
         </div>
