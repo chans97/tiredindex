@@ -8,6 +8,59 @@
 </head>
 
 <body>
+    <header class="w-full  flex flex-col items-between justify-between fixed transition-middle   rounded-b-xl"
+        style="z-index:1000;">
+        <div class="pt13vh px15vh pb05vh  flex flex-row justify-between">
+            <div class="flex flex-row w-full items-center justify-start">
+
+                <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 7vh; "
+                    onclick="location.href='index.html'">
+                <span class="headtitle transition-middle">피로도 측정기</span>
+            </div>
+            <div class="flex flex-row items-center mr8vh">
+                <i id="opensubtitle"
+                    class="fas fa-caret-down downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
+                    onclick="showsubtitle();"></i>
+                <i id="closesubtitle"
+                    class="fas fa-caret-up downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
+                    onclick="hidesubtitle();"></i>
+            </div>
+        </div>
+        <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
+                    onclick="location.href='nohim.html'">Dr.피로 상담소<i class="fas fa-sticky-note ml-3"></i></span>
+            </div>
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
+                    onclick="location.href='yeshim.html'">Dr.피로가 전하는
+                    위로의 말<i class="far fa-sticky-note ml-3"></i></span>
+            </div>
+        </div>
+        <div class="line border-b"></div>
+    </header>
+    <header class="w-full  flex flex-col items-between justify-between transition-middle   rounded-b-lg">
+        <div class="pt13vh px24vh  flex flex-row justify-between">
+            <div href="index.html" class="flex flex-row w-full items-center justify-start ">
+
+                <img src="img/logo.jpg" alt="" srcset="" class="mr-2" style="width: 5.4vh; ">
+                <span class="headtitle transition-middle">피로도 측정기</span>
+            </div>
+        </div>
+        <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">Dr.피로
+                    상담소<i class="fas fa-sticky-note ml-3"></i></span>
+            </div>
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle ">
+                    Dr.피로가
+                    전하는
+                    위로의 말<i class="far fa-sticky-note ml-3"></i></span>
+            </div>
+        </div>
+        <div class="line border-b"></div>
+    </header>
     <p><strong>1. 개인정보의 처리 목적</strong> &lt;김기회&gt;(‘https://fatigueindex.netlify.app/’이하 ‘인공지능 피로도 측정기’) 은(는) 다음의 목적을
         위하여 개인정보를
         처리하고 있으며, 다음의 목적 이외의 용도로는 이용하지 않습니다.<br> - 고객 가입의사 확인, 고객에 대한 서비스 제공에 따른 본인 식별.인증, 회원자격 유지.관리, 물품 또는 서비스 공급에 따른
