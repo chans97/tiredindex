@@ -33,58 +33,58 @@
 
 <body class="w-full">
     <header class="w-full  flex flex-col items-between justify-between fixed transition-middle   rounded-b-xl"
-    style="z-index:1000;">
-    <div class="pt13vh px15vh pb05vh  flex flex-row justify-between">
-        <div class="flex flex-row w-full items-center justify-start">
+        style="z-index:1000;">
+        <div class="pt13vh px15vh pb05vh  flex flex-row justify-between">
+            <div class="flex flex-row w-full items-center justify-start">
 
-            <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 7vh; "
-                onclick="location.href='index.html'">
-            <span class="headtitle transition-middle">피로도 측정기</span>
+                <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 7vh; "
+                    onclick="location.href='index.html'">
+                <span class="headtitle transition-middle">피로도 측정기</span>
+            </div>
+            <div class="flex flex-row items-center mr8vh">
+                <i id="opensubtitle"
+                    class="fas fa-caret-down downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
+                    onclick="showsubtitle();"></i>
+                <i id="closesubtitle"
+                    class="fas fa-caret-up downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
+                    onclick="hidesubtitle();"></i>
+            </div>
         </div>
-        <div class="flex flex-row items-center mr8vh">
-            <i id="opensubtitle"
-                class="fas fa-caret-down downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
-                onclick="showsubtitle();"></i>
-            <i id="closesubtitle"
-                class="fas fa-caret-up downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
-                onclick="hidesubtitle();"></i>
+        <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
+                    onclick="location.href='nohim.html'">Dr.피로 상담소<i class="fas fa-sticky-note ml-3"></i></span>
+            </div>
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
+                    onclick="location.href='yeshim.html'">Dr.피로가 전하는
+                    위로의 말<i class="far fa-sticky-note ml-3"></i></span>
+            </div>
         </div>
-    </div>
-    <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
-        <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
-            <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
-                onclick="location.href='nohim.html'">Dr.피로 상담소<i class="fas fa-sticky-note ml-3"></i></span>
-        </div>
-        <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
-            <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
-                onclick="location.href='yeshim.html'">Dr.피로가 전하는
-                위로의 말<i class="far fa-sticky-note ml-3"></i></span>
-        </div>
-    </div>
-    <div class="line border-b"></div>
-</header>
-<header class="w-full  flex flex-col items-between justify-between transition-middle   rounded-b-lg">
-    <div class="pt13vh px24vh  flex flex-row justify-between">
-        <div href="index.html" class="flex flex-row w-full items-center justify-start ">
+        <div class="line border-b"></div>
+    </header>
+    <header class="w-full  flex flex-col items-between justify-between transition-middle   rounded-b-lg">
+        <div class="pt13vh px24vh  flex flex-row justify-between">
+            <div href="index.html" class="flex flex-row w-full items-center justify-start ">
 
-            <img src="img/logo.jpg" alt="" srcset="" class="mr-2" style="width: 5.4vh; ">
-            <span class="headtitle transition-middle">피로도 측정기</span>
+                <img src="img/logo.jpg" alt="" srcset="" class="mr-2" style="width: 5.4vh; ">
+                <span class="headtitle transition-middle">피로도 측정기</span>
+            </div>
         </div>
-    </div>
-    <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
-        <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
-            <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">Dr.피로
-                상담소<i class="fas fa-sticky-note ml-3"></i></span>
+        <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle">Dr.피로
+                    상담소<i class="fas fa-sticky-note ml-3"></i></span>
+            </div>
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
+                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle ">
+                    Dr.피로가
+                    전하는
+                    위로의 말<i class="far fa-sticky-note ml-3"></i></span>
+            </div>
         </div>
-        <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
-            <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle ">
-                Dr.피로가
-                전하는
-                위로의 말<i class="far fa-sticky-note ml-3"></i></span>
-        </div>
-    </div>
-    <div class="line border-b"></div>
-</header>
+        <div class="line border-b"></div>
+    </header>
 
     <div class="">
         <div class="desciptionapp-div flex flex-col items-center">
@@ -131,10 +131,14 @@
         </div>
 
 
+        <div class="mt150vh">
+            <ins class="kakao_ad_area" style="display:block;" data-ad-unit="DAN-ubu5h9y53h2p" data-ad-width="320"
+                data-ad-height="100"></ins>
+            <script type="text/javascript" src="http://t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
     </div>
-
     <footer>
-        <div class="border-b mt-64"></div>
+        <div class="border-b"></div>
         <div class="mt-6 flex flex-col justify-center items-center">
             <span class="text-gray-600 text1">© 김기회 2020. All Rights Reserved. </span>
         </div>
