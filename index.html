@@ -33,11 +33,8 @@
     <script src="https://kit.fontawesome.com/f57bb9b3cd.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-
     <script type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ec797a0b835a91a"></script>
-
-
 </head>
 
 <body class="w-full">
@@ -47,25 +44,25 @@
         <div class="pt13vh px15vh pb05vh  flex flex-row justify-between">
             <div class="flex flex-row w-full items-center justify-start">
 
-                <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 8vh; "
+                <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 7vh; "
                     onclick="location.href='index.html'">
                 <span class="headtitle transition-middle">피로도 측정기</span>
             </div>
-            <div class="flex flex-row items-center">
+            <div class="flex flex-row items-center mr8vh">
                 <i id="opensubtitle"
-                    class="fas fa-caret-down downcon text-gray-500 hover:text-black cursor-pointer transition p-1"
+                    class="fas fa-caret-down downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
                     onclick="showsubtitle();"></i>
                 <i id="closesubtitle"
-                    class="fas fa-caret-up downcon text-gray-500 hover:text-black cursor-pointer transition p-1"
+                    class="fas fa-caret-up downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
                     onclick="hidesubtitle();"></i>
             </div>
         </div>
         <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
-            <div class="flex flex-row w-full items-center justify-end mr-4 mb-3">
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
                 <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
                     onclick="location.href='nohim.html'">Dr.피로 상담소<i class="fas fa-sticky-note ml-3"></i></span>
             </div>
-            <div class="flex flex-row w-full items-center justify-end mr-4">
+            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
                 <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
                     onclick="location.href='yeshim.html'">Dr.피로가 전하는
                     위로의 말<i class="far fa-sticky-note ml-3"></i></span>
@@ -101,11 +98,11 @@
             <div class="flex flex-row justify-center">
 
                 <div class="flex flex-col items-start">
-                    <span class="text1" style="margin-top:5.8vh">Dr.피로가 진단하는 피로도!</span>
+                    <span class="text1" style="margin-top:7.4vh">Dr.피로가 진단하는 피로도!</span>
                     <span class="text1">당신은 지금 얼마나 피곤하신가요?</span>
                 </div>
                 <div class="flex flex-col items-end">
-                    <img src="img/instant.jpg" alt="" srcset="" class=""
+                    <img src="img/basic.gif" alt="" srcset="" class=""
                         style="width: 10.5vh; z-index: -1; position:absolute; margin-left:6.6vh">
                 </div>
             </div>
@@ -121,9 +118,10 @@
                 <div class="image-upload-wrap rounded rounded-lg">
                     <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
                     <div class="drag-text flex flex-col justify-center items-center p-5">
-                        <span class="uploadicon"><i class="fas fa-file-upload"></i></span>
+                        <span class="uploadicon"><i class="fas fa-camera-retro"></i></span>
                         <span class="waitingtext1">으이구! 자네 얼굴 좀 보게나!!!</span>
                     </div>
+
 
                 </div>
 
@@ -131,13 +129,17 @@
 
 
                 <div class="file-upload-content">
-                    <img class="file-upload-image rounded rounded-xl" id="face-image" src="#" alt="your image" />
+                    <img class="file-upload-image" id="face-image" src="#" alt="your image" />
                     <div id="waiting" class="flex flex-col justify-center items-center">
-                        <img src="img/loading.svg" class="loading" />
-                        <span class="waitingtext2 mb-3">조금만 기다리라구..</span>
+                        <img src="img/thinking.gif" class="loading " style="margin-bottom:1.5vh ;" />
+                        <span class="waitingtext2" style="margin-bottom:0.6vh ;">조금만 기다리라구..</span>
                         <span class="waitingtext1">이 Dr.피로가 자네 얼굴을 분석 중이여!</span>
+
                     </div>
                     <div id="checkresult" class="flex flex-col justify-center items-center">
+
+                        <img src="img/pick.gif"
+                            style="margin-bottom:1vh; width: 10vh; margin-left:auto; margin-right:auto;" />
                         <span class="waitingtext1">흠...결과가 나왔구만...자네는 말이야..</span>
                         <div>
                             <button id="checktotal" class="text-center rounded rounded-lg border px-4 m-2 checkresult"
@@ -154,8 +156,9 @@
                             <div id="index" class="flex flex-row justify-between items-center">
                             </div>
                         </div>
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <div class="addthis_inline_share_toolbox_7w5p my-5"></div>
+
+                        <!-- Go to www.addthis.com/dashboard to customize your tools-->
+                        <div class="addthis_inline_share_toolbox_p57t my-5"></div>
 
 
                         <div id="checkzone" class="checkzone flex flex-col justify-center items-center">
