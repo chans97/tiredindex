@@ -325,3 +325,17 @@ footer {
 .mt150vh{
   margin-top: 15vh;
 }
+
+.my38vh {
+  margin-top: 3.8vh;
+  margin-bottom: 3.8vh;
+}
+
+
+.px2vh {
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+.m08vh {
+  margin: 0.8vh;
+}

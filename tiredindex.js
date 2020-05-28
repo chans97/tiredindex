@@ -186,26 +186,26 @@ async function predict(resultindex) {
 }
 function writeResult1(resultindex) {
     if (resultindex < 35) {
-        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
-        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
-        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`
     } else if (resultindex < 75) {
-        var totalmessage = `<span class="oneline-puple onelinemessage">자네 다크서클이... 배꼽까지 내려갈 기세야..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가..?</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">자네 다크서클이... 배꼽까지 내려갈 기세야..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가..?</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
-        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
-        var totalmessage = `<span class="oneline-red onelinemessage ">자네 눈 좀 보게!! 눈이 판다야 판다.</span><span class="oneline-red onelinemessage ">오늘 저녁은 대나무인가? </span>
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">자네 눈 좀 보게!! 눈이 판다야 판다.</span><span class="oneline-red onelinemessage ">오늘 저녁은 대나무인가? </span>
         ${angry}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
-        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${hum}%</span>나 피곤한
-        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...</span></div>`
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...</span></div></div>`
     }
 
     $(".onelineestimate").html(totalmessage);
@@ -213,26 +213,26 @@ function writeResult1(resultindex) {
 
 function writeResult2(resultindex) {
     if (resultindex < 35) {
-        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
-        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
-        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`
     } else if (resultindex < 75) {
-        var totalmessage = `<span class="oneline-puple onelinemessage">자네 얼굴에 기름 뜬 것 좀 보게나. </span><span class="oneline-puple onelinemessage">기름 걱정은 안해도 되겠어~</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">자네 얼굴에 기름 뜬 것 좀 보게나. </span><span class="oneline-puple onelinemessage">기름 걱정은 안해도 되겠어~</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
-        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
-        var totalmessage = `<span class="oneline-red onelinemessage ">자네 피부가 꼭 축처진 시래기같다네!!</span>
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">자네 피부가 꼭 축처진 시래기같다네!!</span>
         ${angry}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
-        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div>`
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
 
     $(".onelineestimate").html(totalmessage);
@@ -240,26 +240,26 @@ function writeResult2(resultindex) {
 
 function writeResult3(resultindex) {
     if (resultindex < 35) {
-        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
-        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
-        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`
     } else if (resultindex < 75) {
-        var totalmessage = `<span class="oneline-puple onelinemessage">피로가 얼굴까지 올라와서, 얼굴이 부었네..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">피로가 얼굴까지 올라와서, 얼굴이 부었네..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
-        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
-        var totalmessage = `<span class="oneline-red onelinemessage ">뭐 오줌참고 있는가? 얼굴이 누래!!</span>
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">뭐 오줌참고 있는가? 얼굴이 누래!!</span>
         ${angry}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
-        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div>`
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
 
     $(".onelineestimate").html(totalmessage);
@@ -267,26 +267,26 @@ function writeResult3(resultindex) {
 
 function writeResult4(resultindex) {
     if (resultindex < 35) {
-        var totalmessage = `<span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
-        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div>`
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        var totalmessage = `<span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
-        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div>`
+        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`
     } else if (resultindex < 75) {
-        var totalmessage = `<span class="oneline-puple onelinemessage">혹시 어제 라면 먹고 잤나? 얼굴이 많이 부었구만...</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">혹시 어제 라면 먹고 잤나? 얼굴이 많이 부었구만...</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
-        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div>`
+        상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
-        var totalmessage = `<span class="oneline-red onelinemessage ">호빵맨이 질투할만큼, 얼굴이 부었구만!</span>
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">호빵맨이 질투할만큼, 얼굴이 부었구만!</span>
         ${angry}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div>`
+                상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
-        var totalmessage = `<span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
-        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div>`
+        상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
 
     $(".onelineestimate").html(totalmessage);
