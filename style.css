@@ -136,6 +136,7 @@ header{
 }
 span{
   font-family: 'Nanum Gothic', sans-serif;
+  z-index: 8;
 }
 
 
@@ -289,7 +290,11 @@ footer {
 }
 
 .pb05vh {
-  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+}
+
+.pb10vh {
+  padding-bottom: 1.0vh;
 }
 
 .px24vh {
