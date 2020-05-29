@@ -43,12 +43,21 @@ body {
     transition: all 500ms;
   }
   
-  .image-dropping,
   .image-upload-wrap:hover {
     background-color: #7f8c8d;
     border: 2px dotted #ffffff;
     color: #ecf0f1;
   }
+
+  .image-upload-wrap:hover .waitingtext3 {
+    color: #ecf0f1;
+  }
+  .waitingtext3 {
+    color: #000000;
+  }
+  
+
+
   
   .image-title-wrap {
     padding: 0 15px 15px 15px;
@@ -66,10 +75,9 @@ body {
   }
   
   .file-upload-image {
-    max-height: 30vh;
-    max-width: 30vh;
+    width: 20vh;
     margin: auto;
-    padding: 20px;
+    padding: 2vh;
     border-radius: 3.5vh;
   }
   
@@ -118,7 +126,7 @@ header{
   color: #34495e;
 }
 
-#test-result,#checkresult,#zoneindex,#closesubtitle,#subtitle{
+#test-result,#checkresult,#zoneindex,#closesubtitle,#subtitle,#different-image,#clickimg{
   display: none;
 }
 
@@ -227,6 +235,9 @@ span{
 .oneline-blue{
  color: #3498db; 
 }
+.oneline-pink{
+  color: #cf3776; 
+ }
 .oneline-puple{
  color: #9b59b6; 
 }
@@ -326,6 +337,8 @@ footer {
   margin-top: 15vh;
 }
 
+
+
 .my38vh {
   margin-top: 3.8vh;
   margin-bottom: 3.8vh;
@@ -338,4 +351,9 @@ footer {
 }
 .m08vh {
   margin: 0.8vh;
+}
+
+.doctor {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size:4vh;
 }

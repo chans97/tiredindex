@@ -10,11 +10,11 @@ const weightGood = 0.1
 const minlndex = 0.05
 const totalrate = 0.70
 const realname = ["눈가 피로", "피부 피로", "기미 잡티", "얼굴 붓기"]
-const thinking = `<div class="w-full flex flex-col justify-start items-start"><img src="img/thinking.gif" style=" width: 6vh; position:absolute; z-index:3"></div>`
-const pick = `<div class="w-full flex flex-col justify-start items-start"><img src="img/pick.gif" style=" width: 6vh; position:absolute; z-index:3"></div>`
-const angry = `<div class="w-full flex flex-col justify-start items-start"><img src="img/angry.gif" style=" width: 9vh; position:absolute; z-index:3"></div>`
-const hum = `<div class="w-full flex flex-col justify-start items-start"><img src="img/hum.gif" style=" width: 9vh; position:absolute; z-index:3"></div>`
-const amb = `<div class="w-full flex flex-col justify-start items-start"><img src="img/amb.gif" style=" width: 8vh; position:absolute; z-index:3"></div>`
+const thinking = `<div class="w-full flex flex-col justify-start items-start"><img src="img/thinking.gif" style=" width: 9vh; position:absolute; z-index:3; margin-top: -13vh;"></div>`
+const pick = `<div class="w-full flex flex-col justify-start items-start"><img src="img/pick.gif" style=" width: 9vh; position:absolute; z-index:3; margin-top: -13vh;"></div>`
+const angry = `<div class="w-full flex flex-col justify-start items-start"><img src="img/angry.gif" style=" width: 12vh; position:absolute; z-index:3; margin-top: -13vh;"></div>`
+const hum = `<div class="w-full flex flex-col justify-start items-start"><img src="img/hum.gif" style=" width: 12vh; position:absolute; z-index:3; margin-top: -13vh;"></div>`
+const amb = `<div class="w-full flex flex-col justify-start items-start"><img src="img/amb.gif" style=" width: 12vh; position:absolute; z-index:3; margin-top: -13vh;"></div>`
 
 var URL = "https://teachablemachine.withgoogle.com/models/x8l2RqV3V/";
 
@@ -120,6 +120,7 @@ async function predict(resultindex) {
     for (let i = 0; i < maxPredictions; i++) {
         prediction[i].name = realname[i]
     }
+    //test
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
     var resultmessage;
     switch (prediction[0].name) {
@@ -137,18 +138,17 @@ async function predict(resultindex) {
             break;
         case realname[3]:
             resultmessage = "얼굴 붓기"
+            writeResult4(resultindex);
             break;
 
         default:
             resultmessage = "사진을 다시 찍어주세요."
 
     }
-    var zonedetail = `<a href="${prediction[0].className}detail.html"><span class="tiredindex-class border-b border-black pb-1 hover:text-blue-500 hover:border-blue-500 transition"><i class="fas fa-check border-b pb-2"></i>"${prediction[0].name}" 자세히 알아보기!</span></a>`
+    var zonedetail = `<a href="${prediction[0].className}detail.html"><span class="border-b border-black pb-1 hover:text-blue-500 hover:border-blue-500 transition" style="font-size: 2vh;"><i class="fas fa-paste border-b pb-2" style="margin-right:1.3vh"></i>Dr.피로의 맞춤 진단서 받기</span></a>`
     var zonemessage = `<span  class="red-text onelinezone">${resultmessage}</span>`
-    var tipmessage = `<a href="${prediction[0].className}solve.html"><span class="tiredindex-class border-b border-black pb-1 hover:text-blue-500 hover:border-blue-500 transition"><i class="fas fa-check border-b pb-2"></i>"${prediction[0].name}" 해소하기!</span></a>`
     $(".zonedetail").html(zonedetail);
     $(".zoneestimate").html(zonemessage);
-    $(".gettips").html(tipmessage);
     $("#waiting").slideUp(600)
     $("#checkresult").slideDown(600)
 
@@ -186,25 +186,30 @@ async function predict(resultindex) {
 }
 function writeResult1(resultindex) {
     if (resultindex < 35) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/broccoli.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">브로콜리처럼 부드러워 보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
-        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div></div>`
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 브로콜리같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/fish.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네는 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">하지만..약간 동태눈깔이 보여! 조심혀!!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
-        상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`
+        상태야.</span><span class="onelinedescription">이 정돈 괜찮어~ 조금 더 일해도 돼~!</span></div></div>`
     } else if (resultindex < 75) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">자네 다크서클이... 배꼽까지 내려갈 기세야..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가..?</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/pandamoving.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">자네 다크서클이...판다랑 다를 게 없어..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가..?</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
         상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
+        $("#different-image").attr('src', `img/panda.png`);
         var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">자네 눈 좀 보게!! 눈이 판다야 판다.</span><span class="oneline-red onelinemessage ">오늘 저녁은 대나무인가? </span>
-        ${angry}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
-        지금 무려 <span class="oneline-red">${hum}%</span>나 피곤한
+        $("#different-image").attr('src', `img/ghost.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        지금 무려 <span class="oneline-red">%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...</span></div></div>`
     }
 
@@ -213,24 +218,29 @@ function writeResult1(resultindex) {
 
 function writeResult2(resultindex) {
     if (resultindex < 35) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/cucumbers.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해 보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
         상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
-        지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
+        $("#different-image").attr('src', `img/peach.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-pink onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-pink onelinemessage">잘 익은 복숭아 같어~~</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-pink">${resultindex}%</span> 피곤한
         상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`
     } else if (resultindex < 75) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">자네 얼굴에 기름 뜬 것 좀 보게나. </span><span class="oneline-puple onelinemessage">기름 걱정은 안해도 되겠어~</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/pistol.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">자네 얼굴에 기름 뜬 것 좀 보게나. </span><span class="oneline-puple onelinemessage">기름 걱정은 안해도 되겠어~</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
         상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
+        $("#different-image").attr('src', `img/leaf.jpg`);
         var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">자네 피부가 꼭 축처진 시래기같다네!!</span>
-        ${angry}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        $("#different-image").attr('src', `img/ghost.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
@@ -240,24 +250,29 @@ function writeResult2(resultindex) {
 
 function writeResult3(resultindex) {
     if (resultindex < 35) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/squash.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 애호박처럼 탱탱해 보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
-        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div></div>`
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 애호박같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
-        지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
+        $("#different-image").attr('src', `img/fig.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-pink onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-pink onelinemessage">잘 익은 무화과 같아! 기미 잡티는 조심해야겠는걸~</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        지금 <span class="oneline-pink">${resultindex}%</span> 피곤한
         상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`
     } else if (resultindex < 75) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">피로가 얼굴까지 올라와서, 얼굴이 부었네..</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/berry.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">피로가 얼굴까지 올라와서, 얼굴이 울굴불긋하구만..</span><span class="oneline-puple onelinemessage">상한 딸기같아..좀 쉬는게 어떤가....</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
         상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">뭐 오줌참고 있는가? 얼굴이 누래!!</span>
-        ${angry}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        $("#different-image").attr('src', `img/pumpkin.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">자네 지금 늙은 호박이야!</span><span class="oneline-red onelinemessage "> 얼굴이 누래!! 어서 쉬게나!</span>
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        $("#different-image").attr('src', `img/ghost.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
@@ -267,24 +282,29 @@ function writeResult3(resultindex) {
 
 function writeResult4(resultindex) {
     if (resultindex < 35) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">갓 딴 오이처럼 싱싱해보이는구만!</span>${thinking}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/paprika.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-green onelinemessage">잘 익은 파프리카처럼 예뻐 보이는구만!</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
-        상태야. </span><span class="onelinedescription">아주 건강해보여! 오이같아요~</span></div></div>`
+        상태야. </span><span class="onelinedescription">아주 건강해보여! 파프리카 같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">다시 일에 전념하도록!</span>${pick}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/moon.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">그런데..자네 약간 보름달을 닮았어?</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
         상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`
     } else if (resultindex < 75) {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">혹시 어제 라면 먹고 잤나? 얼굴이 많이 부었구만...</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span>${amb}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
+        $("#different-image").attr('src', `img/noodle.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-puple onelinemessage">혹시 어제 라면 먹고 잤나? 얼굴이 많이 부었구만...</span><span class="oneline-puple onelinemessage">좀 쉬는게 어떤가....</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
         상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
+        $("#different-image").attr('src', `img/bakery.png`);
         var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">호빵맨이 질투할만큼, 얼굴이 부었구만!</span>
-        ${angry}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span>${hum}<div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        $("#different-image").attr('src', `img/ghost.png`);
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
@@ -292,10 +312,19 @@ function writeResult4(resultindex) {
     $(".onelineestimate").html(totalmessage);
 }
 
+function toggleimage() {
+    $("#face-image").toggle()
+    $("#different-image").toggle()
+}
 
 function showresult() {
+
+    $("#clickimg").slideDown(500)
+    $("#firstdiv").slideUp(300)
     $("#checkresult").slideUp(500)
     $("#test-result").slideDown(500)
+    $("#face-image").slideUp(500)
+    $("#different-image").slideDown(500)
     var resultindex = $("#totalBar").attr('name')
     $("#totalBar").animate({ width: `${resultindex}%` }, 1000)
 }

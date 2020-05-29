@@ -8,6 +8,8 @@
     <!--for google-->
     <meta name="google-site-verification" content="m-horGsBVePV5GS2Voj2IlaSJug1y8oBh366f5rqTCQ" />
 
+
+
     <!--for search-->
     <link rel="canonical" href="https://fatigueindex.netlify.app/">
     <meta name="description" content="인공지능 피로도 측정기! Dr.피로가 여러분의 피로도를 측정해드립니다.">
@@ -42,12 +44,15 @@
     <script src="https://kit.fontawesome.com/f57bb9b3cd.js" crossorigin="anonymous"></script>
     <!--google font-->
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ec797a0b835a91a"></script>
     <!--adsensecheck-->
-    <script data-ad-client="ca-pub-7662674161732532" async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!--<script data-ad-client="ca-pub-7662674161732532" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+    <script data-ad-client="pub-7662674161732532" async src="https://pagead2.googlesyndication.com/
+        pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body class="w-full">
@@ -63,7 +68,7 @@
             </div>
             <div class="flex flex-row items-center mr8vh">
                 <i id="opensubtitle"
-                    class="fas fa-caret-down downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
+                    class="fas fa-bars downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
                     onclick="showsubtitle();"></i>
                 <i id="closesubtitle"
                     class="fas fa-caret-up downcon text-gray-500 hover:text-black cursor-pointer transition p-2"
@@ -73,13 +78,9 @@
         <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
             <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
                 <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
-                    onclick="location.href='nohim.html'">Dr.피로 상담소<i class="fas fa-sticky-note ml-3"></i></span>
+                    onclick="location.href='nohim.html'">Dr.피로의 한 줄 상담소<i class="fas fa-sticky-note ml-3"></i></span>
             </div>
-            <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
-                <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
-                    onclick="location.href='yeshim.html'">Dr.피로가 전하는
-                    위로의 말<i class="far fa-sticky-note ml-3"></i></span>
-            </div>
+
         </div>
         <div class="line border-b"></div>
     </header>
@@ -97,7 +98,7 @@
 
 
     <div class="">
-        <div class="desciptionapp-div flex flex-col items-center">
+        <div id="firstdiv" class="desciptionapp-div flex flex-col items-center">
             <div class="flex flex-row justify-center">
 
                 <div class="flex flex-col items-start">
@@ -118,11 +119,15 @@
             <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
             <div class="file-upload rounded rounded-xl">
 
-                <div class="image-upload-wrap rounded rounded-lg">
-                    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="image-upload-wrap rounded rounded-lg" style="margin-bottom: 3vh;">
+                    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*"
+                        style="z-index: 15;" />
                     <div class="drag-text flex flex-col justify-center items-center p-5">
+                        <span class="waitingtext3 transition-middle doctor"> "자네
+                            얼굴 좀
+                            보여주겠나??"</span>
                         <span class="uploadicon"><i class="fas fa-camera-retro"></i></span>
-                        <span class="waitingtext1">으이구! 자네 얼굴 좀 보게나!!!</span>
+                        <span class="waitingtext1"> 정면 사진을 업로드 해주세요.</span>
                     </div>
 
 
@@ -132,18 +137,26 @@
 
 
                 <div class="file-upload-content">
-                    <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-                    <div id="waiting" class="flex flex-col justify-center items-center">
-                        <img src="img/thinking.gif" class="loading " style="margin-bottom:1.5vh ;" />
-                        <span class="waitingtext2" style="margin-bottom:0.6vh ;">조금만 기다리라구..</span>
-                        <span class="waitingtext1">이 Dr.피로가 자네 얼굴을 분석 중이여!</span>
+
+                    <span id="clickimg" class="text-gray-600 text1" style="font-size: 1.7vh;">*이미지를 클릭해보세요.</span>
+                    <img class="file-upload-image cursor-pointer" id="face-image" src="#" alt="your image"
+                        onclick="toggleimage();" />
+                    <img class="file-upload-image cursor-pointer" id="different-image" src="#" alt="your image"
+                        onclick="toggleimage();" />
+
+                    <div id="waiting" class="flex flex-col justify-center items-center w-full">
+                        <img src="img/walking.gif" style="margin-bottom:1.5vh; height: 17vh" />
+                        <span class="waitingtext2 doctor" style="margin-bottom:0.6vh ; font-size:3.5vh;">조금만
+                            기다리라구..</span>
+                        <span class="waitingtext1 doctor" style="margin-bottom:1.8vh ; font-size:3vh ;">이 Dr.피로가 자네 얼굴을
+                            분석 중일세!</span>
 
                     </div>
                     <div id="checkresult" class="flex flex-col justify-center items-center">
 
-                        <img src="img/pick.gif"
+                        <img src="img/check.gif"
                             style="margin-bottom:1vh; width: 10vh; margin-left:auto; margin-right:auto;" />
-                        <span class="waitingtext1">흠...결과가 나왔구만...자네는 말이야..</span>
+                        <span class="waitingtext1 doctor" style="font-size:3vh ;">흠..! 결과가 나왔구만...자네는 말이야..!</span>
                         <div>
                             <button id="checktotal"
                                 class="text-center rounded rounded-lg border px2vh m08vh checkresult"
@@ -166,7 +179,7 @@
 
 
                         <div id="checkzone" class="checkzone flex flex-col justify-center items-center">
-                            <span class="waitingtext1">어디가 그렇게 피곤해보이나요?</span>
+                            <span class="waitingtext1">"어디가 그렇게 피곤해보이나요?"</span>
                             <button class="rounded rounded-lg border text-center  px2vh m08vh checkresult"
                                 onclick="showzone();"><span class="text2">원인
                                     보기</span></button>
@@ -184,13 +197,17 @@
                                     onclick="slideupzone();"><span class="text2">상세
                                         닫기</span></button></div>
 
-                            <div class="zoneestimate mt-5">
+                            <div class="zoneestimate" style="margin-top: 5vh; margin-bottom: 5vh;">
                             </div>
                             <div id="label-container" class="flex flex-col justify-between items-center"></div>
-                            <div class="zonedetail mt-5 ">
+                            <div class="zonedetail border justify-center flex flex-row" style="margin-top: 5vh; margin-bottom: 5vh;padding: 2vh;
+                            border-radius: 2vh;
+                            border-color: black;
+                            width: 35vh;
+                            margin-left: auto;
+                            margin-right: auto;">
                             </div>
-                            <div class="gettips mt-3 ">
-                            </div>
+
                             <div style="margin-top: 2vh;">
                                 <button id="checktotal"
                                     class="text-center rounded rounded-lg border px2vh m08vh checkresult"
@@ -204,16 +221,25 @@
             <!--여기까지 드래그앤드롭-->
         </div>
 
-        <div class="mt150vh">
+        <div style="margin-top: 5.0vh;">
+            <!--쿠팡파트너스
+            <div class="flex flex-row justify-center">
+                <iframe src="https://coupa.ng/bDh12Y" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+                <iframe src="https://coupa.ng/bDh1wj" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+                <iframe src="https://coupa.ng/bDh0C2" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+            </div>-->
+
+            <!--카카오애드핏-->
             <ins class="kakao_ad_area" style="display:block;" data-ad-unit="DAN-ubu5h9y53h2p" data-ad-width="320"
                 data-ad-height="100"></ins>
             <script type="text/javascript" src="https://t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
     </div>
     <footer>
-        <div class="border-b"></div>
-        <div class="mt-6 flex flex-col justify-center items-center">
+        <div class="border-b" style="margin-bottom: 3vh;"></div>
+        <div class="flex flex-col justify-center items-center">
             <span class="text-gray-600 text1">© 김기회 2020. All Rights Reserved. </span>
+            <span class="text-gray-600 text1" style="font-size: 1.4vh;">“파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음"</span>
         </div>
         <div class="flex flex-col justify-center items-center mb-6">
             <span class="text-blue-400 text1">
