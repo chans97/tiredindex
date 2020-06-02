@@ -124,7 +124,7 @@
                     <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*"
                         style="z-index: 15;" />
                     <div class="drag-text flex flex-col justify-center items-center p-5">
-                        <span class="waitingtext1" style="font-size: 1.5vh; margin-bottom:2vh"><i
+                        <span class="waitingtext1" style="font-size: 2vh; margin-bottom:2vh"><i
                                 class="fas fa-exclamation-circle"></i>
                             사진은 저장되지 않습니다.</span>
                         <span class="waitingtext3 transition-middle doctor"> "자네
@@ -191,7 +191,7 @@
                         <div id="checkzone" class="checkzone flex flex-col justify-center items-center">
                             <span class="waitingtext1">"어디가 그렇게 피곤해보이나요?"</span>
                             <button class="rounded rounded-lg border text-center  px2vh m08vh checkresult"
-                                onclick="showzone();"><span class="text2">원인
+                                style="margin-top: 1.5vh;" onclick="showzone();"><span class="text2">원인
                                     보기</span></button>
                             <div>
                                 <button id="checktotal"
@@ -202,20 +202,29 @@
 
 
 
-                        <div id="zoneindex" class="zoneindex">
-                            <div><button class="rounded rounded-lg border text-center  px2vh m08vh checkresult"
-                                    onclick="slideupzone();"><span class="text2">상세
-                                        닫기</span></button></div>
+                        <div id="zoneindex" class="zoneindex flex flex-col  justify-center items-center">
 
-                            <div class="zoneestimate" style="margin-top: 5vh; margin-bottom: 5vh;">
-                            </div>
-                            <div id="label-container" class="flex flex-col justify-between items-center"></div>
-                            <div class="zonedetail border justify-center flex flex-row" style="margin-top: 5vh; margin-bottom: 5vh;padding: 2vh;
+                            <div><button class="rounded rounded-lg border text-center  px2vh checkresult"
+                                    style="margin-bottom:1.5vh;" onclick="slideupzone();"><span class="text2">상세
+                                        닫기</span></button></div>
+                            <div style="
+                            padding: 0.8vh;
+                            padding-top: 2vh;
+                            border-radius: 2vh;
+                            border-width: 0.3vh;
+                            border-color: #0000001a;
+                        ">
+                                <span class="waitingtext1" style="font-size:2.5vh ;">피로 분석 결과</span>
+                                <div class="zoneestimate" style="margin-top: 2vh; margin-bottom: 2vh;">
+                                </div>
+                                <div id="label-container" class="flex flex-col justify-between items-center"></div>
+                                <div class="zonedetail border justify-center flex flex-row" style="margin-top: 2vh; margin-bottom: 2vh;padding: 2vh;
                             border-radius: 2vh;
                             border-color: black;
                             width: 35vh;
                             margin-left: auto;
                             margin-right: auto;">
+                                </div>
                             </div>
 
                             <div style="margin-top: 2vh;">

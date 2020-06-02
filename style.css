@@ -163,7 +163,6 @@ header{
 span{
   font-family: 'Nanum Gothic', sans-serif;
   z-index: 8;
-  word-break:break-all;
 }
 
 
@@ -218,7 +217,7 @@ span{
 }
 
 .tiredindex-class{
-  font-size:1.7vh
+  font-size:1.5vh
 }
 
 .tiredindex-total-class{
