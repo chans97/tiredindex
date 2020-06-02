@@ -2,9 +2,17 @@
 <html>
 
 <head>
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
+
+    <!--main-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>피로도 측정기</title>
+    <title>닥터피로의 피로도 측정기</title>
+
+    <!--for google-->
+    <meta name="google-site-verification" content="m-horGsBVePV5GS2Voj2IlaSJug1y8oBh366f5rqTCQ" />
 
     <!--for search-->
     <link rel="canonical" href="https://fatigueindex.netlify.app/">
@@ -38,26 +46,27 @@
     <link href="tailwind.css" rel="stylesheet" type="text/css" />
     <!--for icon-->
     <script src="https://kit.fontawesome.com/f57bb9b3cd.js" crossorigin="anonymous"></script>
-    <!--google font-->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ec797a0b835a91a"></script>
     <!--adsensecheck-->
-    <script data-ad-client="ca-pub-7662674161732532" async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!--<script data-ad-client="ca-pub-7662674161732532" async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+    <script data-ad-client="pub-7662674161732532" async src="https://pagead2.googlesyndication.com/
+            pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body class="w-full">
 
     <header class="w-full  flex flex-col items-between justify-between fixed transition-middle   rounded-b-xl"
         style="z-index:1000;">
-        <div class="pt13vh pb05vh px15vh  flex flex-row justify-between">
+        <div class="pt13vh pb10vh px15vh  flex flex-row justify-between">
             <div class="flex flex-row w-full items-center justify-start">
 
                 <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 7vh; "
                     onclick="location.href='index.html'">
-                <span class="headtitle transition-middle">피로도 측정기</span>
+                <span class="headtitle transition-middle  cursor-pointer" onclick="location.href='index.html'">피로도
+                    측정기</span>
             </div>
             <div class="flex flex-row items-center mr8vh">
                 <i id="opensubtitle"
@@ -71,14 +80,15 @@
         <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
             <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
                 <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
-                    onclick="location.href='nohim.html'">Dr.피로의 한 줄 상담소<i class="fas fa-sticky-note ml-3"></i></span>
+                    onclick="location.href='nohim.html'"><i class="fas fa-comments" style="
+                        margin-right: 1vh"></i>Dr.피로의 한 줄 상담소</span>
             </div>
 
         </div>
         <div class="line border-b"></div>
     </header>
     <header class="w-full  flex flex-col items-between justify-between transition-middle   rounded-b-xl">
-        <div class="pt13vh pb05vh px15vh  flex flex-row justify-between">
+        <div class="pt13vh pb10vh px15vh  flex flex-row justify-between">
             <div class="flex flex-row w-full items-center justify-start">
 
                 <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 7vh; "
@@ -89,38 +99,45 @@
     </header>
 
     <div class="">
-        <div class="desciptionapp-div flex flex-col items-center">
+        <div id="firstdiv" class="desciptionapp-div flex flex-col items-center">
             <div class="flex flex-row justify-center">
 
-                <div class="flex flex-col items-start">
-                    <span class="text1" style="margin-top:5.8vh">Dr.피로!!</span>
-                    <span class="text1">"눈가 피로"에 대해 알려주세요!</span>
+
+                <div class="flex flex-col items-start" style="margin-right:2vh; width:33vh">
+
+                    <span class="text1" style="margin-top:3vh;margin-left: 3vh;">Dr.피로!!</span>
+                    <span class="text1"><span class="text1" style="color: #0082d6;font-size: 2.4vh;">"눈가 피로"</span>
+                        에 대해 알려주세요!</span>
                 </div>
                 <div class="flex flex-col items-end">
                     <img src="img/basic.gif" alt="" srcset="" class=""
-                        style="width: 10.5vh; z-index: -1; position:absolute; margin-left:6.6vh">
+                        style="width: 10vh; z-index: -1; position:absolute; margin-left:5vh">
                 </div>
             </div>
 
         </div>
 
 
-        <div class="w-full photodiv">
+        <div class="w-full photodiv" style="
+        padding-top: 2vh;
+    ">
             <div class="file-upload rounded rounded-xl" style="background-color: #90cdf41c;">
                 <div class="flex flex-col ">
 
-                    <span class="text3">
+                    <span class="text3" style="margin-bottom: 3vh;">
                         눈가는 얼굴에서 피곤함이 가장 잘 드러나는 부위랍니다.
-                    </span> <span class="text3">
+                    </span> <span class="text3" style="margin-bottom: 3vh;">
                         눈에 피로가 쌓이면, 쌍꺼풀이 풀리고 홑꺼풀은 눈두덩이에 희미한 선이 생겨요.
-                    </span><span class="text3">
+                    </span><span class="text3" style="margin-bottom: 3vh;">
                         다크서클이 진해지며 인상 자체가 피곤하고 멍해 보이기 쉽상이에요.
-                    </span><span class="text3">
+                    </span><span class="text3" style="margin-bottom: 3vh;">
                         이를 해결하려면! 눈 주위 360도를 모두 지압해 혈액과 림프 순환을 촉진시켜야 해요!!
                     </span>
-                    <span class="text3">
+                    <span class="text3" style="margin-bottom: 3vh;">
                         잘 들어! 그 쪽이 해야하는 일이라구!
                     </span>
+                    <div class="flex flex-row w-full items-start"></div>
+
                 </div>
                 <div class="zonedetail border justify-center flex flex-row" style="
                 background-color: #90cdf475;
@@ -132,29 +149,32 @@
                             width: 35vh;
                             margin-left: auto;
                             margin-right: auto;
+                            z-index:10;
                             "><a href="zone1solve.html"><span
                             class="border-b border-black pb-1 hover:text-blue-500 hover:border-blue-500 transition"
                             style="font-size: 2vh;"><i class="fas fa-paste border-b pb-2" style="margin-right:1.3vh"
                                 aria-hidden="true"></i>Dr.피로의 맞춤 처방전 받기</span></a></div>
+
 
             </div>
         </div>
 
 
         <div class="mt150vh">
-            <ins class="kakao_ad_area" style="display:block;" data-ad-unit="DAN-ubu5h9y53h2p" data-ad-width="320"
-                data-ad-height="100"></ins>
-            <script type="text/javascript" src="https://t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
     </div>
     <footer>
-        <div class="border-b"></div>
-        <div class="mt-6 flex flex-col justify-center items-center">
+        <div class="border-b" style="margin-bottom: 3vh;"></div>
+        <div class="flex flex-col justify-center items-center">
             <span class="text-gray-600 text1">© 김기회 2020. All Rights Reserved. </span>
+            <!--쿠팡파트너스 설명문구
+            <span class="text-gray-600 text1" style="font-size: 1.4vh;">“파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음"</span>
+            -->
         </div>
         <div class="flex flex-col justify-center items-center mb-6">
             <span class="text-blue-400 text1">
-                <a href="privacy.html"> Privacy</a> / <a href="mailto:chansoo920@gmail.com">Contact me</a>
+                <a href="privacy.html"> Privacy</a> / <a href="aboutMe.html">About me</a> / <a
+                    href="reference.html">Reference</a>
             </span>
         </div>
     </footer>

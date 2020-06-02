@@ -149,8 +149,8 @@ async function predict(resultindex) {
     var zonemessage = `<span  class="red-text onelinezone">${resultmessage}</span>`
     $(".zonedetail").html(zonedetail);
     $(".zoneestimate").html(zonemessage);
-    $("#waiting").slideUp(600)
-    $("#checkresult").slideDown(600)
+    $("#waiting").slideUp(200)
+    $("#checkresult").slideDown(200)
 
 
 
@@ -212,7 +212,6 @@ function writeResult1(resultindex) {
         지금 무려 <span class="oneline-red">%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...</span></div></div>`
     }
-
     $(".onelineestimate").html(totalmessage);
 }
 
@@ -233,7 +232,7 @@ function writeResult2(resultindex) {
         지금 <span class="oneline-puple">${resultindex}%</span> 피곤한
         상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
-        $("#different-image").attr('src', `img/leaf.jpg`);
+        $("#different-image").attr('src', `img/leaf.gif`);
         var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">자네 피부가 꼭 축처진 시래기같다네!!</span>
         <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
@@ -287,7 +286,7 @@ function writeResult4(resultindex) {
         지금 <span class="oneline-green">${resultindex}%</span> 피곤한
         상태야. </span><span class="onelinedescription">아주 건강해보여! 파프리카 같아요~</span></div></div>`
     } else if (resultindex < 50) {
-        $("#different-image").attr('src', `img/moon.png`);
+        $("#different-image").attr('src', `img/luna.png`);
         var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-blue onelinemessage">자네 아직 멀쩡해보이는구만, </span><span class="oneline-blue onelinemessage">그런데..자네 약간 보름달을 닮았어?</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네는
         지금 <span class="oneline-blue">${resultindex}%</span> 피곤한
         상태야.</span><span class="onelinedescription"> 양-호. 좀 더 일하도록~!</span></div></div>`

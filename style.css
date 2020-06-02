@@ -1,5 +1,8 @@
 
 
+
+
+
 body {
     font-family: sans-serif;
     background-color: #ffffff;
@@ -109,11 +112,26 @@ body {
   }
 
 /* ______________여기까지는 이미지 드래그앤드롭____________*/
+@media (min-width:768px) {
+  .file-upload {
+    background-color: #f9f9f9;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+
 
 .headtitle{
   font-family: 'Nanum Gothic', sans-serif;;
   font-size: 3vh;
   color: #1e2227;
+}
+
+.headtitle-nohim{
+  font-family: 'Nanum Gothic', sans-serif;;
+  font-size: 3vh;
+  color: #edf2f7;
 }
 
 header{
@@ -145,6 +163,7 @@ header{
 span{
   font-family: 'Nanum Gothic', sans-serif;
   z-index: 8;
+  word-break:break-all;
 }
 
 
@@ -164,6 +183,7 @@ span{
 .text3{
   font-size: 1.9vh;
   margin-bottom: 1.2vh;
+  word-break:break-all;
 }
 
 .waitingtext1{
@@ -304,6 +324,10 @@ footer {
   padding-bottom: 0.5vh;
 }
 
+.pb12vh {
+  padding-bottom: 1.2vh;
+}
+
 .pb10vh {
   padding-bottom: 1.0vh;
 }
@@ -356,4 +380,9 @@ footer {
 .doctor {
   font-family: 'Nanum Pen Script', cursive;
   font-size:4vh;
+}
+
+.doctorm {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size:2.7vh;
 }

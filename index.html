@@ -2,13 +2,17 @@
 <html>
 
 <head>
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
+
+    <!--main-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>닥터피로의 피로도 측정기</title>
+
     <!--for google-->
     <meta name="google-site-verification" content="m-horGsBVePV5GS2Voj2IlaSJug1y8oBh366f5rqTCQ" />
-
-
 
     <!--for search-->
     <link rel="canonical" href="https://fatigueindex.netlify.app/">
@@ -42,9 +46,6 @@
     <link href="tailwind.css" rel="stylesheet" type="text/css" />
     <!--for icon-->
     <script src="https://kit.fontawesome.com/f57bb9b3cd.js" crossorigin="anonymous"></script>
-    <!--google font-->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ec797a0b835a91a"></script>
@@ -59,12 +60,13 @@
 
     <header class="w-full  flex flex-col items-between justify-between fixed transition-middle   rounded-b-xl"
         style="z-index:1000;">
-        <div class="pt13vh pb05vh px15vh  flex flex-row justify-between">
+        <div class="pt13vh pb10vh px15vh  flex flex-row justify-between">
             <div class="flex flex-row w-full items-center justify-start">
 
                 <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 7vh; "
                     onclick="location.href='index.html'">
-                <span class="headtitle transition-middle">피로도 측정기</span>
+                <span class="headtitle transition-middle  cursor-pointer" onclick="location.href='index.html'">피로도
+                    측정기</span>
             </div>
             <div class="flex flex-row items-center mr8vh">
                 <i id="opensubtitle"
@@ -78,14 +80,15 @@
         <div id="subtitle" class="py-3 px-8  flex flex-col justify-between items-end">
             <div class="flex flex-row w-full items-center justify-end mr-4 mb14vh">
                 <span class="subheadtitle text-gray-200 hover:text-gray-600 cursor-pointer transition-middle"
-                    onclick="location.href='nohim.html'">Dr.피로의 한 줄 상담소<i class="fas fa-sticky-note ml-3"></i></span>
+                    onclick="location.href='nohim.html'"><i class="fas fa-comments" style="
+                    margin-right: 1vh"></i>Dr.피로의 한 줄 상담소</span>
             </div>
 
         </div>
         <div class="line border-b"></div>
     </header>
     <header class="w-full  flex flex-col items-between justify-between transition-middle   rounded-b-xl">
-        <div class="pt13vh pb05vh px15vh  flex flex-row justify-between">
+        <div class="pt13vh pb10vh px15vh  flex flex-row justify-between">
             <div class="flex flex-row w-full items-center justify-start">
 
                 <img src="img/logo.gif" alt="" srcset="" class="mr8vh cursor-pointer" style="width: 7vh; "
@@ -101,13 +104,13 @@
         <div id="firstdiv" class="desciptionapp-div flex flex-col items-center">
             <div class="flex flex-row justify-center">
 
-                <div class="flex flex-col items-start">
+                <div class="flex flex-col items-start" style="margin-right:2vh; width:33vh">
                     <span class="text1" style="margin-top:7.4vh">Dr.피로가 진단하는 피로도!</span>
                     <span class="text1">당신은 지금 얼마나 피곤하신가요?</span>
                 </div>
                 <div class="flex flex-col items-end">
                     <img src="img/basic.gif" alt="" srcset="" class=""
-                        style="width: 10.5vh; z-index: -1; position:absolute; margin-left:6.6vh">
+                        style="width: 10.5vh; z-index: -1; position:absolute; margin-left:4vh">
                 </div>
             </div>
 
@@ -123,15 +126,21 @@
                     <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*"
                         style="z-index: 15;" />
                     <div class="drag-text flex flex-col justify-center items-center p-5">
+                        <span class="waitingtext1" style="font-size: 1.5vh; margin-bottom:2vh"><i
+                                class="fas fa-exclamation-circle"></i>
+                            사진은 저장되지 않습니다.</span>
                         <span class="waitingtext3 transition-middle doctor"> "자네
                             얼굴 좀
                             보여주겠나??"</span>
                         <span class="uploadicon"><i class="fas fa-camera-retro"></i></span>
                         <span class="waitingtext1"> 정면 사진을 업로드 해주세요.</span>
+
                     </div>
 
 
+
                 </div>
+
 
 
 
@@ -144,6 +153,8 @@
                     <img class="file-upload-image cursor-pointer" id="different-image" src="#" alt="your image"
                         onclick="toggleimage();" />
 
+                    <!--로딩화면-->
+
                     <div id="waiting" class="flex flex-col justify-center items-center w-full">
                         <img src="img/walking.gif" style="margin-bottom:1.5vh; height: 17vh" />
                         <span class="waitingtext2 doctor" style="margin-bottom:0.6vh ; font-size:3.5vh;">조금만
@@ -152,8 +163,9 @@
                             분석 중일세!</span>
 
                     </div>
-                    <div id="checkresult" class="flex flex-col justify-center items-center">
 
+                    <!--로딩종료-->
+                    <div id="checkresult" class="flex flex-col justify-center items-center">
                         <img src="img/check.gif"
                             style="margin-bottom:1vh; width: 10vh; margin-left:auto; margin-right:auto;" />
                         <span class="waitingtext1 doctor" style="font-size:3vh ;">흠..! 결과가 나왔구만...자네는 말이야..!</span>
@@ -218,6 +230,13 @@
                     </div>
                 </div>
             </div>
+            <div class="flex flex-row justify-center" style="margin-top: 3vh;">
+
+
+                <span class="waitingtext1 text-gray-500" style="font-size: 1.5vh; margin-bottom:2vh"><i
+                        class="fas fa-exclamation-circle"></i>
+                    본 서비스를 의료 목적으로 사용할 수 없습니다.</span>
+            </div>
             <!--여기까지 드래그앤드롭-->
         </div>
 
@@ -229,21 +248,24 @@
                 <iframe src="https://coupa.ng/bDh0C2" width="120" height="240" frameborder="0" scrolling="no"></iframe>
             </div>-->
 
-            <!--카카오애드핏-->
+            <!--카카오애드핏
             <ins class="kakao_ad_area" style="display:block;" data-ad-unit="DAN-ubu5h9y53h2p" data-ad-width="320"
                 data-ad-height="100"></ins>
-            <script type="text/javascript" src="https://t1.daumcdn.net/kas/static/ba.min.js" async></script>
+            <script type="text/javascript" src="https://t1.daumcdn.net/kas/static/ba.min.js" async></script>-->
         </div>
     </div>
     <footer>
         <div class="border-b" style="margin-bottom: 3vh;"></div>
         <div class="flex flex-col justify-center items-center">
             <span class="text-gray-600 text1">© 김기회 2020. All Rights Reserved. </span>
+            <!--쿠팡파트너스 설명문구
             <span class="text-gray-600 text1" style="font-size: 1.4vh;">“파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음"</span>
+            -->
         </div>
         <div class="flex flex-col justify-center items-center mb-6">
             <span class="text-blue-400 text1">
-                <a href="privacy.html"> Privacy</a> / <a href="mailto:chansoo920@gmail.com">Contact me</a>
+                <a href="privacy.html"> Privacy</a> / <a href="aboutMe.html">About me</a> / <a
+                    href="reference.html">Reference</a>
             </span>
         </div>
     </footer>
