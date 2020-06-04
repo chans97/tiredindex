@@ -208,7 +208,7 @@ function writeResult1(resultindex) {
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
         $("#different-image").attr('src', `img/ghost.png`);
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...</span><span class="oneline-gray onelinemessage">영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...</span></div></div>`
     }
@@ -239,7 +239,7 @@ function writeResult2(resultindex) {
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
         $("#different-image").attr('src', `img/ghost.png`);
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...</span><span class="oneline-gray onelinemessage">영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
@@ -271,7 +271,7 @@ function writeResult3(resultindex) {
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
         $("#different-image").attr('src', `img/ghost.png`);
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...</span><span class="oneline-gray onelinemessage">영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
@@ -303,7 +303,7 @@ function writeResult4(resultindex) {
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
     } else {
         $("#different-image").attr('src', `img/ghost.png`);
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-gray onelinemessage">10분 정도 남았다네...</span><span class="oneline-gray onelinemessage">영정사진이라도 준비혀..</span><div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
         지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
         상태야....</span><span class="onelinedescription">그니깐...아마 오래는 힘들거야...나까지 지쳐가는구만..</span></div></div>`
     }
