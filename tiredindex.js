@@ -265,7 +265,7 @@ function writeResult3(resultindex) {
         상태야..</span><span class="onelinedescription">아직 버틸만 하지만, 썩 좋아보이진 않아.</span></div></div>`
     } else if (resultindex < 100) {
         $("#different-image").attr('src', `img/pumpkin.png`);
-        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">자네 지금 늙은 호박이야!</span><span class="oneline-red onelinemessage "> 얼굴이 누래!! 어서 쉬게나!</span>
+        var totalmessage = `<div class="flex flex-col justify-center items-center" style="width: 40vh;"><span class="oneline-red onelinemessage ">호박이다!! 호박이야!!</span><span class="oneline-red onelinemessage ">자네 얼굴이 누래!! 어서 쉬게나!</span>
         <div class="mt-3 flex flex-col justify-center items-center "><span class="onelinedescription">자네
                 지금 무려 <span class="oneline-red">${resultindex}%</span>나 피곤한
                 상태야!! </span><span class="onelinedescription">어서 집에가서 쉬라고</span></div></div>`
