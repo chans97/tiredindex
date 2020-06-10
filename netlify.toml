@@ -2,3 +2,4 @@
   from = "https://fatigueindex.netlify.app"
   to = "https://fatigueindex.ga"
   status = 301
+  force = true
