@@ -1,2 +1,3 @@
 User-agent: *
-Allow: https://fatigueindex.ga/sitemap.xml
+Allow: /
+Sitemap: https://fatigueindex.ga/sitemap.xml
